@@ -2,7 +2,7 @@
 
 **Crumella – Website Penjualan Cake & Dessert**
 
-**Identitas Proyek**
+**1. Identitas Proyek**
 
 | **Keterangan**          | **Isi**                          |
 | ----------------------- | -------------------------------- |
@@ -14,11 +14,11 @@
 | **Program Studi**       | Informatika                      |
 | **Informatika**         | Universitas Samudra              |
 
-**Latar Belakang**
+**2. Latar Belakang**
 
 Ketika orang makin suka membeli makanan lewat internet karena praktis, dan cake/dessert sering dicari untuk ulang tahun atau acara keluarga. Terkadang pembeli sering bingung melihat pilihan rasa, harga, dan tampilan produk, lalu harus bertanya satu per satu ke penjual. Crumella dibuat sebagai website untuk melihat, membaca detail, dan memesan cake/dessert dengan mudah.
 
-**Tujuan Proyek**
+**3. Tujuan Proyek**
 
 Dalam hal ini, tujuan dari pembuatan website Crumella adalah :
 
@@ -28,7 +28,7 @@ Dalam hal ini, tujuan dari pembuatan website Crumella adalah :
 - Memungkinkan pembeli mengumpulkan beberapa pesanan di keranjang, lalu membayarnya sekaligus.
 - Menghadirkan website yang enak dilihat dan gampang dipakai, bahkan oleh pengguna baru.
 
-**Target Penggunaan**
+**4. Target Penggunaan**
 
 Target penggunaan website Crumella ini adalah :
 
@@ -39,7 +39,7 @@ Target penggunaan website Crumella ini adalah :
 - Memungkinkan pembeli mengumpulkan beberapa pesanan di keranjang, lalu membayarnya sekaligus.
 - Menghadirkan website yang enak dilihat dan gampang dipakai, bahkan oleh pengguna baru.
 
-**Ruang Lingkup**
+**5. Ruang Lingkup**
 
 - Logo Crumella (splash screen)
 - Onboarding
@@ -51,11 +51,11 @@ Target penggunaan website Crumella ini adalah :
 - Payment
 - Profil
 
-**Alur Utama Aplikasi**
+**6. Alur Utama Aplikasi**
 
 Alur pengguna dalam website : **Buka Website** 🡪 **Login** 🡪 **Search Produk** 🡪 **Detail Produk** 🡪 **Checkout** 🡪 **Payment**
 
-**Batasan Proyek**
+**7. Batasan Proyek**
 
 Pada tahap sprint 1 ini, proyek ini berfungsi dalam perancangan UX/UI, perencanaan sistem, struktur website.
 
@@ -64,7 +64,7 @@ Pada tahap sprint 1 ini, proyek ini berfungsi dalam perancangan UX/UI, perencana
 - Brownies
 - Minuman
 
-**Hasil Yang Diharapkan**
+**8. Hasil Yang Diharapkan**
 
 Bagian hasil yang diharapkan adalah :
 
@@ -74,7 +74,7 @@ Bagian hasil yang diharapkan adalah :
 - Rancangan sistem dan daftar fitur yang siap kerjakan.
 - Tersedia dasar yang cukup kuat dalam memulai membuat website di sprint.
 
-**Pembagian Tugas Anggota**
+**9. Pembagian Tugas Anggota**
 
 Anggota kelompok 7 :
 
@@ -84,7 +84,7 @@ Anggota kelompok 7 :
 | Faradilatul Najwa (250504015) | Project Setup         |
 | Yuwan Shabrina(250504026)     | Agile Methodology     |
 
-**Indikator Keberhasilan**
+**10. Indikator Keberhasilan**
 
 Proyek Crumella yang dianggap berhasil jika :
 
