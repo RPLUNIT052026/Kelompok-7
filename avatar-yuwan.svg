@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs><clipPath id="c"><circle cx="150" cy="150" r="150"/></clipPath></defs>
+  <g clip-path="url(#c)">
+    <rect width="300" height="300" fill="#F5CFB3"/>
+    <ellipse cx="150" cy="140" rx="96" ry="104" fill="#B87A6E"/>
+    <path d="M38 300 C38 232 95 208 150 208 C205 208 262 232 262 300 Z" fill="#B87A6E"/>
+    <path d="M78 215 Q150 285 222 215 L262 300 L38 300 Z" fill="#CC9387"/>
+    <rect x="132" y="190" width="36" height="30" rx="14" fill="#F1C9A5"/>
+    <ellipse cx="150" cy="138" rx="64" ry="72" fill="#F1C9A5"/>
+    <path d="M82 138 C80 66 220 66 218 138 C196 102 104 102 82 138 Z" fill="#B87A6E"/>
+    <path d="M112 112 Q150 96 188 112" stroke="#CC9387" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M112 123 Q127 117 142 123" stroke="#4a2c22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M158 123 Q173 117 188 123" stroke="#4a2c22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="128" cy="142" rx="6" ry="7" fill="#2b1a14"/>
+    <ellipse cx="172" cy="142" rx="6" ry="7" fill="#2b1a14"/>
+    <circle cx="130" cy="139" r="2" fill="#fff"/>
+    <circle cx="174" cy="139" r="2" fill="#fff"/>
+    <!-- kacamata -->
+    <circle cx="128" cy="142" r="21" fill="#ffffff" fill-opacity="0.18" stroke="#5C171B" stroke-width="4"/>
+    <circle cx="172" cy="142" r="21" fill="#ffffff" fill-opacity="0.18" stroke="#5C171B" stroke-width="4"/>
+    <path d="M149 140 Q150 136 151 140" stroke="#5C171B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M107 140 L92 136" stroke="#5C171B" stroke-width="4" stroke-linecap="round"/>
+    <path d="M193 140 L208 136" stroke="#5C171B" stroke-width="4" stroke-linecap="round"/>
+    <path d="M150 150 Q146 163 152 165" stroke="#d9a483" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M135 177 Q150 192 165 177" stroke="#8B4A4A" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="108" cy="164" r="9" fill="#E9A59A" opacity="0.55"/>
+    <circle cx="192" cy="164" r="9" fill="#E9A59A" opacity="0.55"/>
+    <circle cx="150" cy="232" r="7" fill="#F5CFB3"/>
+  </g>
+</svg>
