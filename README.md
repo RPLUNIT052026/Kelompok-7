@@ -143,29 +143,6 @@ flowchart LR
 
 </div>
 
-<h3 align="center">🖼️ Galeri Desain</h3>
-
-<table align="center">
-  <tr>
-    <td align="center" width="25%"><img src="design/01-splash.jpg" width="200" alt="Splash" /><br/><sub><b>Splash</b></sub></td>
-    <td align="center" width="25%"><img src="design/02-onboarding-1.jpg" width="200" alt="Onboarding 1" /><br/><sub><b>Onboarding 1</b></sub></td>
-    <td align="center" width="25%"><img src="design/03-onboarding-2.jpg" width="200" alt="Onboarding 2" /><br/><sub><b>Onboarding 2</b></sub></td>
-    <td align="center" width="25%"><img src="design/04-onboarding-3.jpg" width="200" alt="Onboarding 3" /><br/><sub><b>Onboarding 3</b></sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="25%"><img src="design/05-login.jpg" width="200" alt="Log In" /><br/><sub><b>Log In</b></sub></td>
-    <td align="center" width="25%"><img src="design/06-home.jpg" width="200" alt="Home" /><br/><sub><b>Home</b></sub></td>
-    <td align="center" width="25%"><img src="design/07-menu.jpg" width="200" alt="Menu" /><br/><sub><b>Menu</b></sub></td>
-    <td align="center" width="25%"><img src="design/08-product-detail.jpg" width="200" alt="Product Detail" /><br/><sub><b>Product Detail</b></sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="25%"><img src="design/09-cart.jpg" width="200" alt="Cart" /><br/><sub><b>Cart</b></sub></td>
-    <td align="center" width="25%"><img src="design/10-checkout.jpg" width="200" alt="Checkout" /><br/><sub><b>Checkout</b></sub></td>
-    <td align="center" width="25%"><img src="design/12-profile.jpg" width="200" alt="Profile" /><br/><sub><b>Profile</b></sub></td>
-    <td align="center" width="25%"><img src="design/13-edit-profile.jpg" width="200" alt="Edit Profile" /><br/><sub><b>Edit Profile</b></sub></td>
-  </tr>
-</table>
-
 <details>
 <summary><b>🧁 Lihat semua layar sekaligus</b></summary>
 <br/>
