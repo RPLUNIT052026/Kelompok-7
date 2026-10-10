@@ -198,8 +198,6 @@ flowchart LR
 
 <br>
 
-<b>Crumella © 2026</b>
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=5C171B&height=140&section=footer&animation=fadeIn" width="100%"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=18&duration=2800&pause=900&color=5C171B&center=true&vCenter=true&width=650&lines=TERIMA+KASIH+SUDAH+BERKUNJUNG+%F0%9F%A7%81;SWEET+MOMENTS%2C+BETTER+DAYS+%F0%9F%8D%92;SALAM+MANIS%2C+TIM+CRUMELLA+%F0%9F%8D%B0" />
