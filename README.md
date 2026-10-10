@@ -181,7 +181,7 @@ flowchart LR
 
 ---
 
-<h2 align="center">🗺️ Roadmap</h2>
+<div align="center">
 
 | Tahap | Target | Status |
 |-------|--------|--------|
