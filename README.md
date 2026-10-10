@@ -142,10 +142,6 @@ flowchart LR
 | **Edit Profile** | Name · E-mail · User Name · Password · Phone number |
 
 </div>
-
-<br/>
-<p align="center">
-  <img src="design/crumella-screens.png" alt="Semua layar Crumella" width="100%" />
 </p>
 </details>
 
