@@ -143,8 +143,6 @@ flowchart LR
 
 </div>
 
-<details>
-<summary><b>🧁 Lihat semua layar sekaligus</b></summary>
 <br/>
 <p align="center">
   <img src="design/crumella-screens.png" alt="Semua layar Crumella" width="100%" />
