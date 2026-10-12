@@ -90,7 +90,7 @@ flowchart LR
 <table align="center">
   <tr>
     <td align="center" width="260">
-      <img src="avatar-raisa.svg" width="160" alt="Avatar Raisa" />
+      <img src="Assets/avatar-raisa.svg" width="160" alt="Avatar Raisa" />
       <h3>Raisa Salsabilla</h3>
       <img src="https://img.shields.io/badge/NIM-250504002-5C171B?style=for-the-badge" alt="NIM" /><br/><br/>
       <a href="https://github.com/raisasalsabilla"><img src="https://img.shields.io/badge/GitHub-raisasalsabilla-181717?style=for-the-badge&logo=github" alt="GitHub Raisa" /></a>
