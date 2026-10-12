@@ -25,28 +25,35 @@ Class
 Catatan
 
 ### 1 Use Case Diagram Interaksi pengguna dengan sistem
+```mermaid
+flowchart LR
+    P([👤 Pelanggan])
 
-![UML diagram: UML use case diagram for the Crumella website system.](24029b85683e6c5b14e96022cd9b6ff6_img.jpg)
+    subgraph S[Sistem Website Crumella]
+        UC1(Registrasi / Login)
+        UC2(Lihat Beranda)
+        UC3(Lihat Menu)
+        UC4(Lihat Detail Produk)
+        UC5(Pilih Ukuran Reguler / Large)
+        UC6(Kelola Keranjang)
+        UC7(Checkout)
+        UC8(Lihat Profil)
+        UC9(Edit Profil)
+    end
 
-SISTEM WEBSITE CRUMELLA  
-«include»  
-Registrasi / Login  
-Autentikasi  
-Cari Produk  
-«extend»  
-Lihat Detail Produk  
-«include»  
-Pilih Ukuran & Jumlah  
-Kelola Keranjang  
-«include»  
-Pilih Alamat Pengiriman  
-Checkout Pesanan  
-Pilih Metode Pembayaran  
-Paym  
-«include»  
-Lihat Status Pesanan  
-Pelanggan
+    P --- UC1
+    P --- UC2
+    P --- UC3
+    P --- UC4
+    P --- UC6
+    P --- UC7
+    P --- UC8
+    P --- UC9
 
+    UC4 -. include .-> UC5
+    UC7 -. include .-> UC1
+    UC6 -. include .-> UC1
+```
 ```
 graph LR
   subgraph Sistem [SISTEM WEBSITE CRUMELLA]
