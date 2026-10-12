@@ -90,13 +90,13 @@ flowchart LR
 <table align="center">
   <tr>
     <td align="center" width="260">
-      <img src="Assets/avatar-raisa.svg" width="160" alt="Avatar Raisa" />
+      <img src="assets/avatar-raisa.svg" width="160" alt="Avatar Raisa" />
       <h3>Raisa Salsabilla</h3>
       <img src="https://img.shields.io/badge/NIM-250504002-5C171B?style=for-the-badge" alt="NIM" /><br/><br/>
       <a href="https://github.com/raisasalsabilla"><img src="https://img.shields.io/badge/GitHub-raisasalsabilla-181717?style=for-the-badge&logo=github" alt="GitHub Raisa" /></a>
     </td>
     <td align="center" width="260">
-      <img src="Assets/avatar-najwa.svg" width="160" alt="Avatar Najwa" />
+      <img src="assets/avatar-najwa.svg" width="160" alt="Avatar Najwa" />
       <h3>Faradilatul Najwa</h3>
       <img src="https://img.shields.io/badge/NIM-250504015-8B4A4A?style=for-the-badge" alt="NIM" /><br/><br/>
       <a href="https://github.com/faradilanajwa275"><img src="https://img.shields.io/badge/GitHub-faradilanajwa275-181717?style=for-the-badge&logo=github" alt="GitHub Najwa" /></a>
@@ -104,13 +104,13 @@ flowchart LR
   </tr>
   <tr>
     <td align="center" width="260">
-      <img src="Assets/avatar-yuwan.svg" width="160" alt="Avatar Yuwan" />
+      <img src="assets/avatar-yuwan.svg" width="160" alt="Avatar Yuwan" />
       <h3>Yuwan Shabrina</h3>
       <img src="https://img.shields.io/badge/NIM-250504026-B87A6E?style=for-the-badge" alt="NIM" /><br/><br/>
       <a href="https://github.com/yuwanshabrina"><img src="https://img.shields.io/badge/GitHub-yuwanshabrina-181717?style=for-the-badge&logo=github" alt="GitHub Yuwan" /></a>
     </td>
     <td align="center" width="260">
-      <img src="Assets/avatar-audiva.svg" width="160" alt="Avatar Audiva" />
+      <img src="assets/avatar-audiva.svg" width="160" alt="Avatar Audiva" />
       <h3>Audiva Shavina</h3>
       <img src="https://img.shields.io/badge/NIM-250504035-C99A87?style=for-the-badge" alt="NIM" /><br/><br/>
       <a href="https://github.com/audivashavina"><img src="https://img.shields.io/badge/GitHub-audivashavina-181717?style=for-the-badge&logo=github" alt="GitHub Audiva" /></a>
