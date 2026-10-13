@@ -4,7 +4,7 @@
 
 - **Perhitungan Function Point (FP)**
 
-Dalam hal ini FP untuk mengestimasi ukuran atau kompleksitas Website Crumella berdasarrkan ruang lingkup yang tercantup di Charter (Splash Screen, Onboarding, Login/Sign Up, Home, Search Menu, Detail Produk, Checkout, Payment, dan Profil), sebelum development dimulai.
+Dalam hal ini FP untuk mengestimasi ukuran atau kompleksitas Website Crumella berdasarrkan ruang lingkup yang tercantup di Charter (Splash Screen, Onboarding, Login / Sign Up, Home, Search Menu, Detail Produk, Checkout, Payment, dan Profil), sebelum development dimulai.
 
 - **Identifikasi Komponen Fungsional**
 
