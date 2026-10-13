@@ -1,4 +1,4 @@
-# Setup Kode – Crumella
+# Setup Kode – Crumella - Cake & Dessert
 
 > Website Penjualan Cake & Dessert
 > Folder ini menandakan proyek **Crumella** siap masuk tahap development.
