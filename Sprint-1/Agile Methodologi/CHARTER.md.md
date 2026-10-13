@@ -1,4 +1,4 @@
-**CHARTER**
+**PROJECT CHARTER**
 
 **Crumella – Website Penjualan Cake & Dessert**
 
