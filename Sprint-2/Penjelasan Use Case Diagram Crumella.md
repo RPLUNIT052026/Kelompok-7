@@ -1,5 +1,5 @@
 # PENJELASAN USE CASE DIAGRAM
-## Crumella — Sweet Moments, Better Days
+## Crumella — Cake and Dessert
 
 ## 1. Pendahuluan
 
