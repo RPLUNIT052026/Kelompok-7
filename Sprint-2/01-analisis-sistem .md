@@ -68,7 +68,7 @@ Alur utama pengguna sesuai charter proyek: **Buka Website → Login → Cari Pro
 
 Bagian ini menjelaskan **Diagram Konteks** Website Crumella. Diagram memandang seluruh sistem sebagai satu proses tunggal (*inti pusat*) dan memetakan aliran data masuk (*input*) serta keluar (*output*) dari dan ke entitas luar (*terminator*).
 
-<img src="https://github.com/RPLUNIT052026/Kelompok-7/blob/main/assets/02-context-diagram-crumella.png?raw=true" width="800" alt="Context Diagram Crumella">
+<img src="../assets/02-context-diagram-crumella.png" width="800" alt="Context Diagram Crumella">
 
 ---
 
