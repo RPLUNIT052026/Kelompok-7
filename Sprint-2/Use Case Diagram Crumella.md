@@ -1,5 +1,3 @@
-<img width="1920" height="2970" alt="use_case_diagram_crumella_hitam (1)" src="https://github.com/user-attachments/assets/ec06b9cd-df18-4b40-95b8-0a6ad5093980" />
-
 # PENJELASAN USE CASE DIAGRAM
 ## Crumella — Cake and Dessert
 
