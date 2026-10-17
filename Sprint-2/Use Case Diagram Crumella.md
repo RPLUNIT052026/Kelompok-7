@@ -32,10 +32,13 @@ Diagram ini menggambarkan seluruh fitur yang dapat dilakukan Pelanggan pada Crum
 
 ### Diagram
 
+# Use Case Diagram Crumella
+
 ```mermaid
 flowchart LR
     Pelanggan(["👤 Pelanggan"])
     Sosial(["🔗 Google / Facebook"])
+    Payment(["💳 Payment Gateway"])
 
     subgraph Sistem["Crumella"]
         direction TB
@@ -51,9 +54,10 @@ flowchart LR
         UC10(["10 Menandai Favorit"])
         UC11(["11 Melihat Keranjang"])
         UC12(["12 Checkout"])
-        UC13(["13 Melihat Profil"])
-        UC14(["14 Mengubah Profil"])
-        UC15(["15 Keluar Akun"])
+        UC13(["13 Pilih Metode Pembayaran"])
+        UC14(["14 Melihat Profil"])
+        UC15(["15 Mengubah Profil"])
+        UC16(["16 Keluar Akun"])
     end
 
     Pelanggan --- UC01
@@ -65,15 +69,19 @@ flowchart LR
     Pelanggan --- UC08
     Pelanggan --- UC11
     Pelanggan --- UC12
-    Pelanggan --- UC13
     Pelanggan --- UC14
     Pelanggan --- UC15
+    Pelanggan --- UC16
     Sosial --- UC04
+    Payment --- UC13
 
     UC04 -. extend .-> UC03
     UC09 -. extend .-> UC08
     UC10 -. extend .-> UC08
     UC12 -. include .-> UC11
+    UC12 -. include .-> UC13
+    UC15 -. include .-> UC14
+```
 ```
 
 ### Cara Membaca Diagram
