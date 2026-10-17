@@ -6,7 +6,7 @@ Dokumentasi ini merinci pemodelan sistem fungsional dan struktural dari **Websit
 
 ## 1. Use Case Diagram (Interaksi Pengguna dengan Sistem)
 
-<img src="https://github.com/RPLUNIT052026/Kelompok-7/blob/main/assets/01-use-case-crumella.png?raw=true" width="800" alt="Use Case Diagram Crumella">
+<img src=01-use-case-crumella (1).png width="800" alt="Use Case Diagram Crumella">
 
 ---
 
