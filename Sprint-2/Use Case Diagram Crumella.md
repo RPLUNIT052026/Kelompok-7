@@ -1,3 +1,5 @@
+<img width="2586" height="3960" alt="use_case_diagram_crumella_hitam" src="https://github.com/user-attachments/assets/e2f7bebb-0cee-4c6e-a0df-431ed4885621" />
+
 # PENJELASAN USE CASE DIAGRAM
 ## Crumella — Cake and Dessert
 
@@ -747,5 +749,3 @@ Beberapa teks pada desain Figma perlu dirapikan sebelum masuk tahap pengkodean:
 Use Case Diagram Crumella memiliki satu aktor utama, yaitu Pelanggan, satu aktor pendukung (Google / Facebook), dan 15 use case: Melihat Onboarding, Registrasi, Login, Login dengan Akun Sosial, Melihat Beranda, Mencari Dessert, Melihat Menu, Melihat Detail Dessert, Menambah ke Keranjang, Menandai Favorit, Melihat Keranjang, Checkout, Melihat Profil, Mengubah Profil, dan Keluar Akun.
 
 Setiap use case dipetakan ke layar pada desain Figma. Dengan adanya Use Case Diagram ini, cakupan sistem lebih mudah dipahami oleh Kelompok 7 dan dapat menjadi acuan dalam pengembangan, pengujian, serta perbaikan Crumella.
-
-<img width="2586" height="3960" alt="use_case_diagram_crumella" src="https://github.com/user-attachments/assets/d407102a-d708-42db-9313-8f7b61e06207" />
