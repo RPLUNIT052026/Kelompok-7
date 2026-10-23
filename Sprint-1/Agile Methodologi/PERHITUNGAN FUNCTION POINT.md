@@ -56,8 +56,8 @@ Daftar fitur/User Stories Website Crumella yang direncanakan untuk seluruh proye
 | US07 | Sebagai pembeli, saya ingin mengelola halaman Profil agar data diri saya tetap terbarui                                                          | Sedang    |
 | US08 | Sebagai pengguna baru, saya ingin melihat splash screen dan Onboarding agar cepat memahami alur penggunaan website                               | Rendah    |
 | US09 | Sebagai pembeli, saya ingin melihat riwayat pesanan saya                                                                                         | Sedang    |
-| SU10 | Sebagai pembeli, saya ingin menerima notifikasi status pesanan                                                                                   | Sedang    |
-
+| US10 | Sebagai pembeli, saya ingin menerima notifikasi status pesanan                                                                                   | Sedang    |
+| US11 | Sebagai penjual, saya ingin login ke akun admin agar hanya saya yang bisa mengelola toko dan data pesanan | Tinggi |
 - **Sprint 1 Backlog**
 
 Target kerja spesifik Sprint 1 sesuai batasan proyek pada Charter: perancangan UX/UI, perencanaan sistem, dan struktur website (bukan development fitur):
