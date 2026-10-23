@@ -58,6 +58,18 @@ Daftar fitur/User Stories Website Crumella yang direncanakan untuk seluruh proye
 | US09 | Sebagai pembeli, saya ingin melihat riwayat pesanan saya                                                                                         | Sedang    |
 | US10 | Sebagai pembeli, saya ingin menerima notifikasi status pesanan                                                                                   | Sedang    |
 | US11 | Sebagai penjual, saya ingin login ke akun admin agar hanya saya yang bisa mengelola toko dan data pesanan | Tinggi |
+| US12 | Sebagai penjual, saya ingin menambah, mengubah, dan menghapus produk (nama, foto, deskripsi, harga) agar menu yang tampil di Home dan Menu selalu sesuai | Tinggi |
+| US13 | Sebagai penjual, saya ingin mengelola kategori produk (Dessert, Cake, Brownies, Minuman) agar produk tersusun rapi dan mudah dicari pembeli | Tinggi |
+| US14 | Sebagai penjual, saya ingin melihat daftar pesanan yang masuk beserta detailnya (produk, jumlah, ukuran, alamat pengiriman) agar bisa segera memproses pesanan | Tinggi |
+| US15 | Sebagai penjual, saya ingin memperbarui status pesanan (dibayar, diproses, selesai) agar pembeli menerima notifikasi yang sesuai (terhubung dengan US10) | Tinggi |
+| US16 | Sebagai penjual, saya ingin memverifikasi atau mengonfirmasi pembayaran dari pembeli agar pesanan hanya diproses setelah pembayaran valid | Tinggi |
+| US17 | Sebagai penjual, saya ingin mengelola pilihan ukuran (Select Size) dan harga per ukuran pada setiap produk agar pembeli bisa memilih sesuai kebutuhan | Sedang |
+| US18 | Sebagai penjual, saya ingin menandai produk habis atau tidak tersedia agar pembeli tidak memesan produk yang tidak bisa dibuat | Sedang |
+| US19 | Sebagai penjual, saya ingin mengatur produk “Popular Menu” dan banner di Home agar produk andalan lebih menonjol | Sedang |
+| US20 | Sebagai penjual, saya ingin melihat riwayat transaksi dan ringkasan penjualan (harian/bulanan) agar bisa memantau perkembangan usaha | Sedang |
+| US21 | Sebagai penjual, saya ingin melihat rating dan ulasan pembeli pada tiap produk agar bisa meningkatkan kualitas produk | Rendah |
+| US22 | Sebagai penjual, saya ingin mengelola data profil toko (nama, kontak, alamat) agar informasi toko selalu terbarui | Rendah |
+
 - **Sprint 1 Backlog**
 
 Target kerja spesifik Sprint 1 sesuai batasan proyek pada Charter: perancangan UX/UI, perencanaan sistem, dan struktur website (bukan development fitur):
