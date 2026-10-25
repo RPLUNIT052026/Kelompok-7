@@ -120,28 +120,8 @@ Menggambarkan dua fase pada profil: menampilkan profil beserta riwayat pesanan, 
 
 ## Diagram
 
-```mermaid
-sequenceDiagram
-    actor P as Pelanggan
-    participant S as Sistem Crumella
-    participant DB as Database
+<img width="2760" height="2360" alt="sequence_profil_pelanggan_crumella" src="https://github.com/user-attachments/assets/5e764cfc-5634-459d-8108-c5b721011d23" />
 
-    Note over P,DB: Fase 1: lihat profil dan riwayat pesanan
-    P->>S: 1. getProfile()
-    S->>DB: 2. ambil profil dan riwayat
-    DB-->>S: 3. data profil dan pesanan
-    S-->>P: 4. tampilkan profil, riwayat
-
-    Note over P,DB: Fase 2: ubah profil
-    P->>S: 5. updateProfile()
-    Note over S: Validasi data profil
-    alt data valid
-        S->>DB: 6. perbarui data pengguna
-        S-->>P: 7. profil diperbarui
-    else data tidak valid
-        S-->>P: 8. tampilkan pesan error
-    end
-```
 
 ## Penjelasan Interaksi
 
