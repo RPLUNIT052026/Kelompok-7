@@ -89,29 +89,8 @@ Menggambarkan tiga fase belanja pelanggan: mencari produk dengan filter, melihat
 
 ## Diagram
 
-```mermaid
-sequenceDiagram
-    actor P as Pelanggan
-    participant S as Sistem Crumella
-    participant DB as Database
+<img width="2760" height="2560" alt="sequence_pelanggan_cari_detail_keranjang_crumella" src="https://github.com/user-attachments/assets/2440c2db-4ac6-496c-bf1d-279bdd3e28eb" />
 
-    Note over P,DB: Fase 1: cari produk
-    P->>S: 1. searchProduct()
-    S->>DB: 2. cari sesuai filter
-    DB-->>S: 3. hasil pencarian
-    S-->>P: 4. tampilkan hasil
-
-    Note over P,DB: Fase 2: lihat detail produk
-    P->>S: 5. getProductDetail()
-    S->>DB: 6. ambil detail produk
-    DB-->>S: 7. data produk
-    S-->>P: 8. tampilkan foto, rasa, harga
-
-    Note over P,DB: Fase 3: tambah ke keranjang
-    P->>S: 9. addToCart()
-    S->>DB: 10. simpan ke keranjang
-    S-->>P: 11. keranjang diperbarui
-```
 
 ## Penjelasan Interaksi
 
