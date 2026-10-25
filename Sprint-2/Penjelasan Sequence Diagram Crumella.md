@@ -149,38 +149,8 @@ Menggambarkan empat fase pengelolaan produk oleh admin: melihat daftar, menambah
 
 ## Diagram
 
-```mermaid
-sequenceDiagram
-    actor A as Admin
-    participant S as Sistem Crumella
-    participant DB as Database
+<img width="2760" height="3560" alt="sequence_kelola_produk_admin_crumella" src="https://github.com/user-attachments/assets/c4de4b18-3125-4a31-8b3f-a3e282cb0022" />
 
-    Note over A,DB: Fase 1: lihat daftar produk
-    A->>S: 1. getProducts()
-    S->>DB: 2. ambil data produk
-    DB-->>S: 3. data produk
-    S-->>A: 4. tampilkan daftar produk
-
-    Note over A,DB: Fase 2: tambah produk
-    A->>S: 5. addProduct()
-    Note over S: Validasi data produk
-    alt data valid
-        S->>DB: 6. simpan produk baru
-        S-->>A: 7. produk ditambahkan
-    else data belum lengkap
-        S-->>A: 8. pesan: data belum lengkap
-    end
-
-    Note over A,DB: Fase 3: ubah produk
-    A->>S: 9. updateProduct()
-    S->>DB: 10. perbarui data produk
-    S-->>A: 11. perubahan tersimpan
-
-    Note over A,DB: Fase 4: hapus produk
-    A->>S: 12. deleteProduct()
-    S->>DB: 13. hapus data produk
-    S-->>A: 14. produk dihapus
-```
 
 ## Penjelasan Interaksi
 
@@ -214,27 +184,8 @@ Menggambarkan dua fase pengelolaan pesanan: admin melihat pesanan masuk, lalu me
 
 ## Diagram
 
-```mermaid
-sequenceDiagram
-    actor A as Admin
-    participant S as Sistem Crumella
-    actor P as Pelanggan
-    participant DB as Database
+<img width="2760" height="2312" alt="sequence_kelola_pesanan_admin_crumella" src="https://github.com/user-attachments/assets/24f6994e-e222-4c64-9f61-523b4bd593c0" />
 
-    Note over A,DB: Fase 1: lihat pesanan masuk
-    A->>S: 1. getOrders()
-    S->>DB: 2. ambil daftar pesanan
-    DB-->>S: 3. daftar pesanan
-    S-->>A: 4. tampilkan pesanan
-
-    Note over A,DB: Fase 2: ubah status pesanan
-    A->>S: 5. updateOrderStatus()
-    Note over S: Validasi status baru
-    S->>DB: 6. simpan status baru
-    DB-->>S: 7. status tersimpan
-    S--)P: 8. sendOrderNotification()
-    S-->>A: 9. status diperbarui
-```
 
 ## Penjelasan Interaksi
 
