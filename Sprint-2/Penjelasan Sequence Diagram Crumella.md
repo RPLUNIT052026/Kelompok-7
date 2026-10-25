@@ -54,39 +54,8 @@ Menggambarkan tiga fase autentikasi pelanggan: registrasi akun baru, login denga
 
 ## Diagram
 
-```mermaid
-sequenceDiagram
-    actor P as Pelanggan
-    participant S as Sistem Crumella
-    participant DB as Database
+<img width="2760" height="2360" alt="sequence_profil_pelanggan_crumella" src="https://github.com/user-attachments/assets/f80d8d0a-17c9-4bf0-8c33-d64f6bf1ed29" />
 
-    Note over P,DB: Fase 1: registrasi
-    P->>S: 1. register()
-    S->>DB: 2. cari email
-    DB-->>S: 3. hasil pencarian
-    alt email belum terdaftar
-        S->>DB: 4. simpan data pengguna
-        S-->>P: 5. akun berhasil dibuat
-    else email sudah terdaftar
-        S-->>P: 6. pesan: email terdaftar
-    end
-
-    Note over P,DB: Fase 2: login
-    P->>S: 7. login()
-    S->>DB: 8. ambil data pengguna
-    DB-->>S: 9. data pengguna
-    Note over S: Verifikasi password
-    alt password benar
-        S-->>P: 10. buat sesi, buka Home
-    else password salah
-        S-->>P: 11. tampilkan pesan error
-    end
-
-    Note over P,DB: Fase 3: logout
-    P->>S: 12. logout()
-    Note over S: Hapus sesi pengguna
-    S-->>P: 13. kembali ke halaman login
-```
 
 ## Penjelasan Interaksi
 
