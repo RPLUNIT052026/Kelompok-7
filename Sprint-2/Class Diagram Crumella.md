@@ -3,7 +3,7 @@
 
 ## 1. Tujuan
 
-Class Diagram digunakan untuk menggambarkan struktur kelas, atribut, metode, serta relasi antar-class pada basis data penjualan cake & dessert di website Crumella.
+Class Diagram adalah diagram UML yang menggambarkan struktur statis sebuah sistem: kelas apa saja yang ada, apa isinya, dan bagaimana kelas-kelas itu berhubungan. Berbeda dengan Sequence Diagram yang fokus pada urutan waktu, Class Diagram fokus pada susunan sistem.
 
 ## 2. Class yang Digunakan
 
