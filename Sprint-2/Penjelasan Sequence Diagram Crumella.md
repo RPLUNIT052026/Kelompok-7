@@ -54,7 +54,7 @@ Menggambarkan tiga fase autentikasi pelanggan: registrasi akun baru, login denga
 
 ## Diagram
 
-<img width="2760" height="2360" alt="sequence_profil_pelanggan_crumella" src="https://github.com/user-attachments/assets/f80d8d0a-17c9-4bf0-8c33-d64f6bf1ed29" />
+<img width="2760" height="3640" alt="sequence_autentikasi_crumella_registrasi_login_logout" src="https://github.com/user-attachments/assets/ae9e2984-c008-4d71-9570-a7804a6c1b8f" />
 
 
 ## Penjelasan Interaksi
