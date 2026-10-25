@@ -1,4 +1,4 @@
-# CLASS DIAGRAM
+# PENJELASAN CLASS DIAGRAM
 ## Website Crumella
 
 ## 1. Tujuan
