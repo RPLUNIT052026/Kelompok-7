@@ -3,7 +3,7 @@
 
 ## 1. Pendahuluan
 
-Sequence Diagram menggambarkan **pertukaran pesan antarobjek berdasarkan urutan waktu**. Yang ditampilkan adalah siapa mengirim pesan kepada siapa, operasi apa yang dipanggil, dan balasan apa yang dikembalikan.
+Sequence Diagram adalah diagram UML yang menunjukkan bagaimana objek-objek berinteraksi satu sama lain dalam urutan waktu tertentu untuk menyelesaikan suatu skenario (misalnya login, pemesanan, atau pembayaran).
 
 Pada proyek Crumella, diagram dibuat dengan pola sederhana: **Aktor - Sistem Crumella - Database**, ditambah **Payment Gateway** pada fitur pembayaran.
 
@@ -214,31 +214,8 @@ Menggambarkan dua fase: pelanggan melakukan checkout dan pembayaran melalui Paym
 
 ## Diagram
 
-```mermaid
-sequenceDiagram
-    actor P as Pelanggan
-    participant S as Sistem Crumella
-    participant PG as Payment Gateway
-    actor A as Admin
+<img width="2760" height="2936" alt="sequence_crumella_pelanggan_admin_payment_gateway" src="https://github.com/user-attachments/assets/a6dd14db-bd63-4913-9cdc-d1749e6e573f" />
 
-    Note over P,A: Fase 1: checkout dan pembayaran
-    P->>S: 1. createOrder()
-    Note over S: 2. Simpan pesanan, status: menunggu bayar
-    S-->>P: 3. tampilkan metode bayar
-    P->>S: 4. requestPayment()
-    S->>PG: 5. processPayment()
-    Note over PG: 6. Pelanggan membayar (QRIS, e-wallet, bank)
-    PG-->>S: 7. sendPaymentCallback()
-    Note over S: 8. Ubah status pesanan menjadi: dibayar
-    S-->>P: 9. getOrderSummary()
-
-    Note over P,A: Fase 2: pengelolaan pesanan oleh admin
-    A->>S: 10. getOrders()
-    S-->>A: 11. daftar pesanan
-    A->>S: 12. updateOrderStatus()
-    Note over S: 13. Simpan status baru: diproses / selesai
-    S-->>P: 14. sendOrderNotification()
-```
 
 ## Penjelasan Interaksi
 
