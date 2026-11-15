@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin - Crumella</title>
+    <style>
+      /* ===== Dasar ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Poppins, Arial, sans-serif;
+        background: #ffffff;
+        color: #1a1210;
+      }
+      main {
+        max-width: 430px;
+        margin: auto;
+        padding: 24px 20px 90px;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 16px 0 8px;
+      }
+      a {
+        color: #000000;
+      }
+      small {
+        color: #000000;
+      }
+      hr {
+        margin: 8px 0;
+      }
+
+      /* ===== Form & tombol ===== */
+      input,
+      select,
+      textarea {
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        font: inherit;
+      }
+      button,
+      .btn {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        border: 0;
+        border-radius: 999px;
+        background: #000000;
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .kecil {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+
+      /* ===== Kotak & baris ===== */
+      .box {
+        margin-top: 12px;
+        padding: 14px;
+        border: 1px solid #000000;
+        border-radius: 14px;
+        background: #ffffff;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .tengah {
+        text-align: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      th,
+      td {
+        padding: 8px 4px;
+        border-bottom: 1px solid #000000;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <h1>Dashboard Admin / Penjual</h1>
+        <a href="login.html">Logout</a>
+      </div>
+
+      <!-- RINGKASAN -->
+      <div class="grid">
+        <div class="box">
+          <small>Pesanan baru</small>
+          <h2>5</h2>
+        </div>
+        <div class="box">
+          <small>Total produk</small>
+          <h2>8</h2>
+        </div>
+        <div class="box">
+          <small>Pendapatan hari ini</small>
+          <h2>Rp 215.000</h2>
+        </div>
+        <div class="box">
+          <small>Pembeli</small>
+          <h2>24</h2>
+        </div>
+      </div>
+
+      <!-- KELOLA PRODUK -->
+      <h2 id="produk">Kelola produk</h2>
+      <table>
+        <tr>
+          <th>Produk</th>
+          <th>Kategori</th>
+          <th>Harga</th>
+          <th>Aksi</th>
+        </tr>
+        <tr>
+          <td>Cloudy Choco Melt</td>
+          <td>Dessert</td>
+          <td>20.000</td>
+          <td>
+            <button class="kecil" type="button">Edit</button>
+            <button class="kecil" type="button">Hapus</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Red Velvet Slice</td>
+          <td>Cake</td>
+          <td>28.000</td>
+          <td>
+            <button class="kecil" type="button">Edit</button>
+            <button class="kecil" type="button">Hapus</button>
+          </td>
+        </tr>
+      </table>
+
+      <!-- TAMBAH PRODUK -->
+      <h3>Tambah produk</h3>
+      <form class="box" action="#" method="post">
+        <input type="text" name="nama" placeholder="Nama produk" required />
+        <select name="kategori">
+          <option>Dessert</option>
+          <option>Cake</option>
+          <option>Brownies</option>
+          <option>Minuman</option>
+        </select>
+        <input type="number" name="harga" placeholder="Harga (Rp)" required />
+        <textarea name="deskripsi" rows="2" placeholder="Deskripsi"></textarea>
+        <button type="submit">Simpan produk</button>
+      </form>
+
+      <!-- PESANAN MASUK -->
+      <h2 id="pesanan">Pesanan masuk</h2>
+      <form action="#" method="post">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Pembeli</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>CR-102346</td>
+            <td>Raisa</td>
+            <td>48.000</td>
+            <td>
+              <select name="status1">
+                <option>Dibayar</option>
+                <option>Diproses</option>
+                <option>Selesai</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>CR-102347</td>
+            <td>Najwa</td>
+            <td>20.000</td>
+            <td>
+              <select name="status2">
+                <option>Dibayar</option>
+                <option selected>Diproses</option>
+                <option>Selesai</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <button type="submit">Update status</button>
+      </form>
+    </main>
+  </body>
+</html>
