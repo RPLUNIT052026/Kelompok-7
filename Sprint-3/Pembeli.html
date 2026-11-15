@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pembeli - Crumella</title>
+    <style>
+      /* ===== Dasar ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Poppins, Arial, sans-serif;
+        background: #ffffff;
+        color: #1a1210;
+      }
+      main {
+        max-width: 430px;
+        margin: auto;
+        padding: 24px 20px 90px;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 16px 0 8px;
+      }
+      a {
+        color: #000000;
+      }
+      small {
+        color: #000000;
+      }
+      hr {
+        margin: 8px 0;
+      }
+
+      /* ===== Form & tombol ===== */
+      input, profil
+      select,
+      textarea {
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        font: inherit;
+      }
+      button,
+      .btn {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        border: 0;
+        border-radius: 999px;
+        background: #000000;
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .kecil {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+
+      /* ===== Kotak & baris ===== */
+      .box {
+        margin-top: 12px;
+        padding: 14px;
+        border: 1px solid #000000;
+        border-radius: 14px;
+        background: #ffffff;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .tengah {
+        text-align: center;
+      }
+      .logo {
+        font-family: "Great Vibes", cursive;
+        font-size: 56px;
+        text-align: center;
+        color: #5b151b;
+      }
+      .tag {
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: #000000;
+        color: #fff;
+        font-size: 12px;
+      }
+      .tag.selesai {
+        background: #000000;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+	  
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>
+        Choose the
+        <br />
+        Dessert you love
+      </h1>
+
+      <!-- PENCARIAN & KATEGORI -->
+      <form action="#menu" method="get">
+        <input type="search" name="q" placeholder="Search for a dessert item" />
+      </form>
+	  
+      <!-- MENU -->
+      <h2 id="menu">Menu</h2>
+      <div class="grid">
+        <div class="box">
+          <b>Cloudy Choco Melt</b>
+          <br />
+          Rp 20.000
+          <button type="button">Add to Cart</button>
+        </div>
+        <div class="box">
+          <b>Red Velvet Slice</b>
+          <br />
+          Rp 28.000
+          <button type="button">Add to Cart</button>
+        </div>
+        <div class="box">
+          <b>Fudgy Brownies</b>
+          <br />
+          Rp 15.000
+          <button type="button">Add to Cart</button>
+        </div>
+        <div class="box">
+          <b>Caramel Latte</b>
+          <br />
+          Rp 19.000
+          <button type="button">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- KERANJANG -->
+      <h2 id="cart">Your sweet cart</h2>
+      <div class="box">
+        <div class="row">
+          <span>Cloudy Choco Melt (Small) ×1</span>
+          <span>Rp 20.000</span>
+        </div>
+        <hr />
+        <div class="row">
+          <b>Total</b>
+          <b>Rp 20.000</b>
+        </div>
+      </div>
+      <a class="btn" href="payment.html">Checkout</a>
+
+      <!-- RIWAYAT PESANAN -->
+      <h2 id="riwayat">Riwayat pesanan</h2>
+      <div class="box">
+        <div class="row">
+          <b>CR-102345</b>
+          <span class="tag selesai">Selesai</span>
+        </div>
+        <small>12 Nov 2026 · QRIS</small>
+        <div class="row">
+          <span>Red Velvet Slice ×1</span>
+          <span>Rp 28.000</span>
+        </div>
+      </div>
+
+      <!-- PROFIL -->
+      <h2 id="profil">Profil</h2>
+      <form class="box" action="#" method="post">
+        <input type="text" name="nama" placeholder="Nama" />
+        <input type="tel" name="hp" placeholder="No. HP" />
+        <textarea name="alamat" rows="2" placeholder="Alamat"></textarea>
+        <button type="submit">Simpan</button>
+      </form>
+      <p class="tengah"><a href="login.html">Logout</a></p>
+    </main>
+  </body>
+</html>
