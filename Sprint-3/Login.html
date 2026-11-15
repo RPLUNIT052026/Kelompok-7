@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Crumella</title>
+    <style>
+      /* ===== Dasar ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Poppins, Arial, sans-serif;
+        background: #ffffff;
+        color: #000000;
+      }
+      main {
+        max-width: 430px;
+        margin: auto;
+        padding: 24px 20px 90px;
+      }
+      h2,
+      h3 {
+        margin: 16px 0 8px;
+      }
+      a {
+        color: #000000;
+      }
+      small {
+        color: #000000;
+      }
+      hr {
+        margin: 8px 0;
+      }
+
+      /* ===== Form & tombol ===== */
+      input,
+      select,
+      textarea {
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid #b9a9a0;
+        border-radius: 10px;
+        font: inherit;
+      }
+      button,
+      .btn {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        border: 0;
+        border-radius: 999px;
+        background: #000000;
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .kecil {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+
+      /* ===== Kotak & baris ===== */
+      .box {
+        margin-top: 12px;
+        padding: 14px;
+        border: 1px solid #b9a9a0;
+        border-radius: 14px;
+        background: #fffafa;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .tengah {
+        text-align: center;
+      }
+      .logo {
+        font-family: "Great Vibes", cursive;
+        font-size: 56px;
+        text-align: center;
+        color: #5b151b;
+      }
+      .tag {
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: #c77d12;
+        color: #fff;
+        font-size: 12px;
+      }
+      .tag.selesai {
+        background: #2f7d4a;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        background: #fff3e6;
+      }
+      nav a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      th,
+      td {
+        padding: 8px 4px;
+        border-bottom: 1px solid #b9a9a0;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- LOG IN -->
+      <form id="masuk" action="#" method="post">
+        <h2>Log In</h2>
+        <select name="peran">
+          <option value="pembeli">Masuk sebagai Pembeli</option>
+          <option value="penjual">Masuk sebagai Admin / Penjual</option>
+        </select>
+        <input type="text" name="email" placeholder="Email atau username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+        <p class="tengah">
+          Belum punya akun?
+          <a href="#daftar">Sign Up</a>
+        </p>
+      </form>
+
+      <hr />
+
+      <!-- SIGN UP -->
+      <form id="daftar" action="#" method="post">
+        <h2>Sign Up</h2>
+        <input type="text" name="nama" placeholder="Nama lengkap" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="hp" placeholder="No. HP" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password (min. 6 karakter)"
+          minlength="6"
+          required
+        />
+        <button type="submit">Sign Up</button>
+        <p class="tengah">
+          Sudah punya akun?
+          <a href="#masuk">Log In</a>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>
