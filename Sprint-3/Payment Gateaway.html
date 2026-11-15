@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment - Crumella</title>
+    <style>
+      /* ===== Dasar ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Poppins, Arial, sans-serif;
+        background: #ffffff;
+        color: #1a1210;
+      }
+      main {
+        max-width: 430px;
+        margin: auto;
+        padding: 24px 20px 90px;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 16px 0 8px;
+      }
+      a {
+        color: #000000;
+      }
+      small {
+        color: #000000;
+      }
+      hr {
+        margin: 8px 0;
+      }
+
+      /* ===== Form & tombol ===== */
+      input,
+      select,
+      textarea {
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        font: inherit;
+      }
+      button,
+      .btn {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        border: 0;
+        border-radius: 999px;
+        background: #000000;
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .kecil {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+
+      /* ===== Kotak & baris ===== */
+      .box {
+        margin-top: 12px;
+        padding: 14px;
+        border: 1px solid #000000;
+        border-radius: 14px;
+        background: #ffffff;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .tengah {
+        text-align: center;
+      }
+      .logo {
+        font-family: "Great Vibes", cursive;
+        font-size: 56px;
+        text-align: center;
+        color: #000000;
+      }
+      .tag {
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: #000000;
+        color: #fff;
+        font-size: 12px;
+      }
+      .tag.selesai {
+        background: #2f7d4a;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        background: #fff3e6;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      th,
+      td {
+        padding: 8px 4px;
+        border-bottom: 1px solid #b9a9a0;
+        text-align: left;
+      }
+	  
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="pembeli.html#cart">← Kembali</a>
+      <h1>Payment</h1>
+
+      <!-- RINGKASAN PESANAN -->
+      <div class="box">
+        <div class="row">
+          <span>Cloudy Choco Melt ×1</span>
+          <span>Rp 20.000</span>
+        </div>
+        <div class="row">
+          <span>Ongkos kirim</span>
+          <span>Rp 8.000</span>
+        </div>
+        <hr />
+        <div class="row">
+          <b>Total</b>
+          <b>Rp 28.000</b>
+        </div>
+      </div>
+
+      <form action="#" method="post">
+        <!-- METODE PEMBAYARAN -->
+        <h3>Metode pembayaran</h3>
+        <select name="metode">
+          <option value="qris">QRIS</option>
+          <option value="va-bca">Virtual Account BCA</option>
+          <option value="ewallet">E-Wallet (GoPay / OVO / DANA)</option>
+          <option value="kartu">Kartu Kredit / Debit</option>
+          <option value="cod">Bayar di Tempat (COD)</option>
+        </select>
+
+        <!-- DETAIL: QRIS -->
+        <div class="box tengah">
+          <b>QRIS</b>
+          <p style="font-size: 90px">.....</p>
+          <small>Scan kode QR dengan aplikasi pembayaranmu.</small>
+        </div>
+
+        <!-- DETAIL: KARTU -->
+        <div class="box">
+          <b>Kartu Kredit / Debit</b>
+          <input type="text" name="nomor-kartu" placeholder="Nomor kartu" />
+          <input type="text" name="nama-kartu" placeholder="Nama di kartu" />
+          <div class="row">
+            <input type="text" name="berlaku" placeholder="MM/YY" />
+            <input type="password" name="cvv" placeholder="CVV" maxlength="4" />
+          </div>
+        </div>
+
+        <!-- STATUS & BAYAR -->
+        <div class="row" style="margin-top: 16px">
+          <span>Status pembayaran</span>
+          <span class="tag">Menunggu pembayaran</span>
+        </div>
+        <button type="submit">Bayar Rp 28.000</button>
+        <p class="tengah"><small>Diproses aman melalui payment gateway.</small></p>
+      </form>
+    </main>
+  </body>
+</html>
