@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumella – Sweet Moments, Better Days</title>
+<meta name="description" content="Crumella: kue, pastry, dan camilan manis yang dibuat segar setiap hari.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#5c161b;--wine2:#650a04;--peach:#fff3e6;--sand:#f9dfc9;--cream:#f5d5b8;--rose:#b98a7a;--ink:#2a0f10;--mute:#6d5350;--line:#e3c9b3;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:Jost,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 17px/1.65 var(--sans);color:var(--ink);background:linear-gradient(var(--peach),var(--sand)) fixed}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1120px,92%);margin:auto}
+h1,h2,h3{line-height:1.15}
+h2{font:600 clamp(36px,5vw,56px)/1.05 var(--serif);color:var(--wine);letter-spacing:-.01em}
+.lead{color:var(--mute);max-width:52ch;margin-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:999px;background:var(--wine);color:#fff;font-weight:600;transition:transform .15s,background .15s}
+.btn:hover{background:var(--wine2);transform:translateY(-2px)}
+.btn.light{background:#fff;color:var(--wine)}
+.btn.ghost{background:transparent;color:var(--wine);box-shadow:inset 0 0 0 2px var(--wine)}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(255,243,230,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(92,22,27,.1)}
+.nav{display:flex;align-items:center;gap:24px;height:68px}
+.logo{display:block;margin-right:auto}.logo img{height:46px;width:auto;display:block}
+.nav a.l{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.nav a.l:hover{color:var(--wine)}
+.pill{padding:9px 20px;border-radius:999px;font-weight:600;font-size:14px}
+.pill.solid{background:var(--wine);color:#fff}
+.pill.out{background:#fff;color:var(--wine)}
+.cnt{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:99px;background:var(--cream);color:var(--wine);font-size:12px;margin-left:6px;padding:0 5px}
+@media(max-width:980px){.nav a.l{display:none}.nav{gap:10px}}
+/* hero */
+.hero{background:linear-gradient(180deg,#9a5b55 0%,#7a3335 38%,#4f1218 100%);color:var(--cream);text-align:center;padding:72px 0 0;overflow:hidden}
+.hero h1{margin:0 auto;width:min(560px,86%)}.hero h1 img{width:100%;display:block}
+.tag{font:500 clamp(20px,2.8vw,26px) var(--serif);letter-spacing:.08em;margin:6px 0 14px}
+.hero p.d{max-width:50ch;margin:0 auto 28px;color:#f1d6c1}
+.hero .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.arches{display:flex;gap:18px;justify-content:center;align-items:flex-end;margin-top:56px}
+.arches img{width:min(260px,40vw);aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 0 0;display:block}
+.arches img:last-child{aspect-ratio:3/3.5}
+/* steps */
+section{padding:84px 0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:1px solid var(--wine)}
+.step{padding:22px 24px 0 0}
+.step b{font:500 42px/1 var(--serif);color:var(--rose);display:block}
+.step h3{font:600 19px var(--sans);margin:12px 0 6px}
+.step p{color:var(--mute);font-size:16px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr;gap:10px}}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about p{color:var(--mute);margin-bottom:14px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+footer p a{color:#f9e4cf}
+/* menu */
+.tools{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:28px 0 8px}
+.search{flex:1 1 280px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:0 20px;box-shadow:0 4px 14px rgba(92,22,27,.08)}
+.search input{border:0;outline:0;background:none;width:100%;padding:14px 0}
+.search:focus-within{box-shadow:0 0 0 3px var(--wine)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 20px;border-radius:999px;background:#fff;font-weight:500;font-size:14px;box-shadow:0 3px 10px rgba(92,22,27,.07)}
+.chip[aria-pressed=true]{background:var(--wine);color:#fff}
+.sub{font:700 18px var(--sans);margin:36px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.card{text-align:left;background:#fffaf6;border:1px solid var(--line);border-radius:26px;padding:14px 14px 18px;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 30px rgba(92,22,27,.14)}
+.pic{aspect-ratio:1;border-radius:20px;background:radial-gradient(circle at 50% 40%,#fbe7d3,#efc7a6);display:grid;place-items:center;margin-bottom:8px}
+.pic svg{width:86%}.pic{overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}
+.card h3{font:600 17px var(--sans)}
+.card .m{font-size:13px;color:var(--mute)}
+.card .pr{font-weight:700;color:var(--wine)}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--mute)}
+/* promo */
+.promo{background:var(--wine);color:var(--cream);border-radius:36px;padding:48px;display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.promo h2{color:#f9e4cf}
+.promo p{color:#e9c9b4;margin-top:6px;max-width:44ch}
+footer{background:#3e0d12;color:#e2bfa8;padding:44px 0;text-align:center}
+footer .logo{color:#f9e4cf;font-size:34px}
+footer p{font-size:14px;margin-top:6px}
+/* dialogs */
+dialog{border:0;border-radius:30px;padding:0;width:min(520px,94vw);max-height:92vh;background:var(--peach);color:var(--ink);box-shadow:0 30px 80px rgba(40,5,8,.45)}
+dialog::backdrop{background:rgba(42,15,16,.55);backdrop-filter:blur(3px)}
+dialog.drawer{margin:0 0 0 auto;height:100vh;max-height:100vh;border-radius:30px 0 0 30px;width:min(460px,100vw)}
+.dh{display:flex;align-items:center;gap:12px;padding:20px 24px 8px}
+.dh h3{font:700 22px var(--sans);margin-right:auto}
+.x{width:40px;height:40px;border-radius:50%;background:#fff;font-size:20px;line-height:1}
+.db{padding:8px 24px 24px}
+.hero-pic{background:var(--wine2);display:grid;place-items:center;padding:20px}
+.hero-pic svg{width:56%}.hero-pic.ph{padding:0}.hero-pic img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 16px}
+.opt{padding:12px;border-radius:16px;background:#fffaf6;border:1.5px solid #ccb5a6;text-align:left;font-weight:600}
+.opt small{display:block;font-weight:400;color:var(--mute)}
+.opt[aria-pressed=true],.opt:has(input:checked){border-color:var(--wine);box-shadow:0 0 0 2px var(--wine) inset}
+.opt input{position:absolute;opacity:0}
+.qty{display:inline-flex;align-items:center;background:#fff;border-radius:12px;border:1px solid #cdb9ab}
+.qty button{width:34px;height:34px;font-weight:700;font-size:18px}
+.qty span{min-width:26px;text-align:center;font-weight:600}
+.row2{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.item{display:flex;gap:14px;align-items:center;background:#fffaf6;border:1px solid var(--line);border-radius:20px;padding:10px;margin-bottom:12px}
+.item .t{width:72px;height:72px;border-radius:14px;background:var(--wine);display:grid;place-items:center;flex:none}
+.item .t svg{width:78%}.item .t{overflow:hidden}.item .t img{width:100%;height:100%;object-fit:cover}
+.item .n{flex:1;min-width:0}.item .n b{display:block}.item .n small{color:var(--mute)}
+.tot{border-top:1px solid #a48d86;margin-top:16px;padding-top:12px}
+.tot div{display:flex;justify-content:space-between;padding:3px 0}
+.tot .g{font-weight:700;font-size:18px;border-top:1px solid #a48d86;margin-top:8px;padding-top:10px}
+label.f{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
+.in{width:100%;padding:12px 16px;border-radius:14px;border:1.5px solid #cdb9ab;background:#ffe9d4}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 8px}
+.tabs button{padding:12px;border-radius:999px;background:#fff;color:var(--wine);font-weight:500}
+.tabs button[aria-selected=true]{background:var(--wine);color:#fff}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--wine);color:#fff;padding:13px 24px;border-radius:999px;z-index:99;transition:transform .3s;font-weight:500}
+.toast.on{transform:translate(-50%,0)}
+.track{list-style:none;padding:0;margin:14px 0}
+.track li{padding:8px 0 8px 34px;position:relative}
+.track li:before{content:"";position:absolute;left:6px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--wine)}
+.track li:not(:last-child):after{content:"";position:absolute;left:12px;top:28px;height:calc(100% - 6px);width:2px;background:var(--rose)}
+.track li.o:before{background:var(--cream);box-shadow:0 0 0 2px var(--rose) inset}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#top" aria-label="Crumella, ke beranda"><img src="img/logo-wine-word.png" alt="Crumella"></a>
+  <a class="l" href="#top">Beranda</a><a class="l" href="#menu">Menu</a><a class="l" href="#cara">Cara pesan</a><a class="l" href="#promo">Promo</a><a class="l" href="#tentang">Tentang</a><a class="l" href="#kontak">Kontak</a>
+  <button class="pill out" id="authBtn">Masuk</button>
+  <button class="pill solid" id="cartBtn" aria-label="Buka keranjang">Keranjang<span class="cnt" id="cnt">0</span></button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <h1><img src="img/logo-cream.png" alt="Crumella"></h1>
+  <p class="tag">Sweet Moments, Better Days</p>
+  <p class="d">Kue, pastry, dan minuman yang dibuat segar setiap hari. Pilih, pesan, lalu pantau sampai ke depan pintumu.</p>
+  <div class="row"><a class="btn light" href="#menu">Lihat menu</a><button class="btn ghost" style="color:#f9e4cf;box-shadow:inset 0 0 0 2px #f1d6c1" data-auth="up">Daftar &amp; dapat diskon</button></div>
+  <div class="arches"><img src="img/affogato.jpg" alt="Caramel affogato dengan es krim vanila"><img src="img/latte.jpg" alt="Hazelnut honey latte dengan latte art"></div>
+</div></div>
+
+<section id="cara"><div class="wrap">
+  <h2>Cara pesan</h2>
+  <p class="lead">Dari memilih sampai menerima pesanan, semuanya cukup dengan beberapa ketukan.</p>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<section id="menu" style="padding-top:20px"><div class="wrap">
+  <h2>Pilih dessert yang kamu suka</h2>
+  <p class="lead">Something sweet is waiting for you.</p>
+  <div class="tools">
+    <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Cari dessert atau pastry" aria-label="Cari dessert"></label>
+    <div class="chips" id="chips" role="group" aria-label="Kategori"></div>
+  </div>
+  <div id="popWrap"><h3 class="sub">Menu populer</h3><div class="grid" id="pop"></div></div>
+  <h3 class="sub" id="allT">Semua menu</h3>
+  <div class="grid" id="all"></div>
+</div></section>
+
+<section id="promo" style="padding-top:0"><div class="wrap"><div class="promo">
+  <div><h2>Get a sweet offer!</h2><p>Daftar hari ini dan nikmati diskon spesial untuk pesanan dessert pertamamu.</p></div>
+  <button class="btn light" data-auth="up">Daftar sekarang</button>
+</div></div></section>
+<section id="tentang"><div class="wrap about">
+  <h2>Dibuat segar, setiap hari</h2>
+  <div><p>Crumella menyajikan kue, pastry, dan minuman dengan bahan pilihan. Semuanya disiapkan di dapur kami setiap hari, supaya rasanya tetap segar saat sampai di tanganmu.</p><p>Kami percaya satu hal sederhana: sepotong dessert yang tepat bisa membuat hari biasa terasa lebih baik.</p></div>
+</div></section>
+</main>
+
+<footer id="kontak"><div class="wrap"><a class="logo" href="#top" style="margin:0 auto 6px;width:fit-content"><img src="img/logo-cream.png" alt="Crumella" style="height:96px"></a><p>Sweet Moments, Better Days</p><p>Pesan lewat website ini setiap hari · <a href="mailto:halo@crumella.id">halo@crumella.id</a> · Instagram @crumella.id</p><p>© 2026 Crumella</p></div></footer>
+
+<dialog id="dProd" aria-label="Detail dessert"></dialog>
+<dialog id="dCart" class="drawer" aria-label="Keranjang"></dialog>
+<dialog id="dOut" aria-label="Checkout"></dialog>
+<dialog id="dAuth" aria-label="Masuk atau daftar"></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),fmt=n=>'Rp '+n.toLocaleString('id-ID'),DELIV=15000,LARGE=5000;
+/* ilustrasi dessert (SVG) */
+const plate='<ellipse cx="100" cy="164" rx="76" ry="13" fill="#fff4e8"/><ellipse cx="100" cy="161" rx="58" ry="8" fill="#ead2bd"/>';
+const ART={
+melt:`<path d="M42 156C40 92 66 58 100 58s60 34 58 98z" fill="#4a2012"/><path d="M42 110c10 16 14-2 24 14s14-20 26-2 16-14 26 4 14-16 24-2 12-6 16-10c-3-30-26-54-58-54S44 80 42 110z" fill="#6b3320"/><path d="M60 92c8-18 26-26 40-26" stroke="#9c5a3c" stroke-width="5" stroke-linecap="round" fill="none"/><circle cx="100" cy="54" r="11" fill="#c8102e"/><path d="M100 44c2-10 8-14 14-15" stroke="#3a6b2a" stroke-width="3" fill="none"/>`,
+straw:`<path d="M34 150l132-4V96L34 118z" fill="#ffd9d2"/><path d="M34 118l132-22v-16L34 100z" fill="#fff6ee"/><path d="M34 100l132-20L148 62 50 76z" fill="#f4b6b0"/><g fill="#d6213c"><path d="M82 64c-10 0-16 8-14 18 3 10 12 14 18 14s15-4 18-14c2-10-4-18-14-18-3 0-5 1-8 0z"/><path d="M118 62c-9 0-14 7-12 15 3 9 10 12 15 12s12-3 15-12c2-8-4-15-12-15z"/></g><g fill="#ffe08a"><circle cx="80" cy="76" r="1.8"/><circle cx="90" cy="82" r="1.8"/><circle cx="120" cy="74" r="1.8"/><circle cx="128" cy="80" r="1.8"/></g><path d="M80 62c-2-6 2-10 6-10M118 60c0-6 4-9 8-8" stroke="#3a8a3a" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+cup:`<path d="M60 158l-8-48h96l-8 48z" fill="#b9566a"/><g stroke="#9c3f55" stroke-width="2"><path d="M70 112l4 46M86 112l2 46M102 112v46M118 112l-2 46M134 112l-4 46"/></g><ellipse cx="100" cy="108" rx="52" ry="16" fill="#f7c6d4"/><ellipse cx="100" cy="90" rx="42" ry="15" fill="#f9d3de"/><ellipse cx="100" cy="74" rx="30" ry="13" fill="#fbdde6"/><ellipse cx="100" cy="60" rx="18" ry="10" fill="#fde8ee"/><circle cx="100" cy="46" r="9" fill="#c8102e"/>`,
+crois:`<g fill="#d89a3c"><ellipse cx="100" cy="132" rx="26" ry="22"/><ellipse cx="66" cy="124" rx="20" ry="16" transform="rotate(-28 66 124)"/><ellipse cx="134" cy="124" rx="20" ry="16" transform="rotate(28 134 124)"/><ellipse cx="44" cy="108" rx="16" ry="12" transform="rotate(-52 44 108)"/><ellipse cx="156" cy="108" rx="16" ry="12" transform="rotate(52 156 108)"/></g><g fill="#efbe62"><ellipse cx="100" cy="122" rx="20" ry="13"/><ellipse cx="68" cy="116" rx="14" ry="9" transform="rotate(-28 68 116)"/><ellipse cx="132" cy="116" rx="14" ry="9" transform="rotate(28 132 116)"/></g><g stroke="#b97a22" stroke-width="3" stroke-linecap="round"><path d="M86 112q14 10 28 0M54 114q8 4 14 2M132 116q8 2 14-2"/></g>`,
+donut:`<path fill-rule="evenodd" d="M100 62a56 50 0 1 0 .1 0zM100 112a16 14 0 1 1-.1 0z" fill="#e0a566"/><path fill-rule="evenodd" d="M100 58a54 46 0 1 0 .1 0zM100 106a17 14 0 1 1-.1 0z" fill="#f48fb1"/><g stroke-width="4" stroke-linecap="round"><path d="M64 84l8-4" stroke="#fff"/><path d="M128 76l8 4" stroke="#ffe08a"/><path d="M80 126l8 3" stroke="#fff"/><path d="M122 130l7-5" stroke="#8fd3ff"/><path d="M52 108l6 1" stroke="#ffe08a"/><path d="M142 106l6 2" stroke="#fff"/><path d="M100 70l1 7" stroke="#8fd3ff"/></g>`,
+mac:`<g><ellipse cx="100" cy="146" rx="42" ry="11" fill="#e98fa8"/><rect x="58" y="134" width="84" height="8" fill="#fff0e0"/><ellipse cx="100" cy="132" rx="42" ry="12" fill="#f6a8bd"/></g><g><ellipse cx="100" cy="112" rx="38" ry="10" fill="#9ccf9a"/><rect x="62" y="102" width="76" height="7" fill="#fff0e0"/><ellipse cx="100" cy="100" rx="38" ry="11" fill="#b5deb2"/></g><g><ellipse cx="100" cy="82" rx="32" ry="9" fill="#e6c44f"/><rect x="68" y="74" width="64" height="6" fill="#fff0e0"/><ellipse cx="100" cy="72" rx="32" ry="10" fill="#f4dc78"/></g>`,
+};
+const art=(t,p=true)=>`<svg viewBox="0 0 200 200" role="img" aria-label="Ilustrasi ${t}">${p?plate:''}${ART[t]}</svg>`;
+const vis=(i,p=true)=>i.img?`<img src="${i.img}" alt="${i.n}" loading="lazy">`:art(i.a,p);
+const ITEMS=[
+{id:1,n:'Caramel Affogato',c:'Minuman',p:32000,r:4.9,v:88,img:'img/affogato.jpg',d:'Satu scoop es krim vanila yang disiram espresso dan saus karamel. Dingin, pahit-manis, dan creamy.'},
+{id:2,n:'Hazelnut Honey Latte',c:'Minuman',p:30000,r:4.8,v:102,img:'img/latte.jpg',d:'Latte hangat dengan hazelnut dan sentuhan madu, disajikan dengan latte art dan taburan kacang renyah.'},
+{id:3,n:'Cloudy Choco Melt',c:'Cake',p:20000,r:4.8,v:120,a:'melt',d:'Dessert cokelat lembut dengan lelehan cokelat premium yang creamy. Perpaduan manis dan rich-nya cocok untuk menemani waktu santaimu.'},
+{id:4,n:'Strawberry Cloud Cake',c:'Cake',p:28000,r:4.9,v:96,a:'straw',d:'Sponge lembut berlapis krim vanila dan stroberi segar. Ringan, segar, dan tidak terlalu manis.'},
+{id:5,n:'Velvet Rose Cupcake',c:'Cupcake',p:18000,r:4.7,v:84,a:'cup',d:'Cupcake red velvet dengan frosting krim keju beraroma mawar dan sebutir ceri di atasnya.'},
+{id:6,n:'Butter Croissant',c:'Pastry',p:22000,r:4.8,v:140,a:'crois',d:'Croissant berlapis renyah dengan mentega asli, dipanggang segar setiap pagi.'},
+{id:7,n:'Glazed Berry Donut',c:'Donat',p:15000,r:4.6,v:73,a:'donut',d:'Donat empuk dengan glaze beri manis dan taburan warna-warni.'},
+{id:8,n:'Macaron Trio',c:'Cookies',p:35000,r:4.9,v:58,a:'mac',d:'Tiga macaron pilihan chef: stroberi, pistachio, dan lemon. Renyah di luar, lembut di dalam.'}];
+const CATS=['Semua','Minuman','Cake','Cupcake','Pastry','Donat','Cookies'],POP=[1,2,3];
+let cat='Semua',cart=[],user=null,toastT;
+try{cart=JSON.parse(localStorage.getItem('crumella-cart')||'[]');user=localStorage.getItem('crumella-user')}catch(e){}
+const save=()=>{try{localStorage.setItem('crumella-cart',JSON.stringify(cart))}catch(e){}};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2600)};
+const price=l=>{const i=ITEMS.find(x=>x.id==l.id);return(i.p+(l.size=='Large'?LARGE:0))*l.qty};
+const sub=()=>cart.reduce((s,l)=>s+price(l),0);
+
+/* hero & langkah */
+$('#steps').innerHTML=[['Pilih dessert','Temukan kue, pastry, dan minuman yang dibuat segar setiap hari.'],['Atur pesanan','Pilih ukuran dan jumlah, lalu masukkan ke keranjang.'],['Checkout','Isi alamat, pilih pembayaran, lalu konfirmasi.'],['Pantau pesanan','Ikuti pesananmu dari dapur sampai ke depan pintu.']].map((t,k)=>`<div class="step"><b>${k+1}</b><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('');
+
+/* menu */
+const card=i=>`<button class="card" data-id="${i.id}"><div class="pic">${vis(i)}</div><h3>${i.n}</h3><span class="m">★ ${i.r} (${i.v} review) · ${i.c}</span><span class="pr">${fmt(i.p)}</span></button>`;
+function renderMenu(){
+  const q=$('#q').value.trim().toLowerCase();
+  const list=ITEMS.filter(i=>(cat=='Semua'||i.c==cat)&&i.n.toLowerCase().includes(q));
+  $('#chips').innerHTML=CATS.map(c=>`<button class="chip" aria-pressed="${c==cat}" data-cat="${c}">${c}</button>`).join('');
+  $('#popWrap').hidden=!!q||cat!='Semua';
+  $('#pop').innerHTML=POP.map(id=>card(ITEMS.find(i=>i.id==id))).join('');
+  $('#allT').textContent=q||cat!='Semua'?`Hasil (${list.length})`:'Semua menu';
+  $('#all').innerHTML=list.length?list.map(card).join(''):'<p class="empty">Belum ada dessert yang cocok. Coba kata kunci atau kategori lain.</p>';
+}
+$('#q').oninput=renderMenu;
+$('#chips').onclick=e=>{const b=e.target.closest('[data-cat]');if(b){cat=b.dataset.cat;renderMenu()}};
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.card');if(c)openProd(+c.dataset.id);
+  const a=e.target.closest('[data-auth]');if(a)openAuth(a.dataset.auth);
+  if(e.target.closest('.x'))e.target.closest('dialog').close();
+  if(e.target.tagName=='DIALOG')e.target.close();
+});
+
+/* detail produk */
+function openProd(id){
+  const i=ITEMS.find(x=>x.id==id);let size='Reguler',qty=1;const d=$('#dProd');
+  const draw=()=>{d.innerHTML=`<div class="hero-pic${i.img?' ph':''}">${vis(i)}</div><div class="db">
+  <div class="row2"><div><h3 style="font:700 24px var(--sans)">${i.n}</h3><div style="font-size:22px;margin:2px 0">${fmt(i.p+(size=='Large'?LARGE:0))}</div></div><button class="x" aria-label="Tutup">×</button></div>
+  <p style="margin:6px 0"><span style="color:#f0a500">★</span> <b>${i.r}</b> (${i.v} Review)</p>
+  <p style="margin:10px 0 16px;color:var(--mute)">${i.d}</p>
+  <b>Pilih ukuran</b><div class="opts"><button class="opt" aria-pressed="${size=='Reguler'}" data-s="Reguler">Reguler<small>${fmt(i.p)}</small></button><button class="opt" aria-pressed="${size=='Large'}" data-s="Large">Large<small>+ ${fmt(LARGE)}</small></button></div>
+  <div class="row2"><div class="qty"><button data-q="-1" aria-label="Kurangi">−</button><span>${qty}</span><button data-q="1" aria-label="Tambah">+</button></div><button class="btn" id="add">Tambah ke keranjang · ${fmt((i.p+(size=='Large'?LARGE:0))*qty)}</button></div></div>`};
+  d.onclick=e=>{const s=e.target.closest('[data-s]'),q=e.target.closest('[data-q]');
+    if(s){size=s.dataset.s;draw()}else if(q){qty=Math.max(1,Math.min(20,qty+ +q.dataset.q));draw()}
+    else if(e.target.closest('#add')){const f=cart.find(l=>l.id==id&&l.size==size);f?f.qty+=qty:cart.push({id,size,qty});save();upd();d.close();toast(`${i.n} masuk keranjang`)}};
+  draw();d.showModal();
+}
+
+/* keranjang */
+function upd(){$('#cnt').textContent=cart.reduce((s,l)=>s+l.qty,0)}
+function openCart(){
+  const d=$('#dCart'),s=sub();
+  d.innerHTML=`<div class="dh"><h3>Your sweet cart</h3><button class="x" aria-label="Tutup">×</button></div><div class="db">`+(cart.length?
+  cart.map((l,k)=>{const i=ITEMS.find(x=>x.id==l.id);return`<div class="item"><div class="t">${vis(i,false)}</div><div class="n"><b>${i.n}</b><small>${l.size} · ${fmt(price(l)/l.qty)}</small><div class="qty" style="margin-top:6px"><button data-k="${k}" data-q="-1" aria-label="Kurangi">−</button><span>${l.qty}</span><button data-k="${k}" data-q="1" aria-label="Tambah">+</button></div></div><button class="x" data-del="${k}" aria-label="Hapus ${i.n}" style="font-size:16px">🗑</button></div>`}).join('')+
+  `<div class="tot"><div><span>Subtotal</span><b>${fmt(s)}</b></div><div><span>Delivery</span><b>${fmt(DELIV)}</b></div><div class="g"><span>Total</span><span>${fmt(s+DELIV)}</span></div></div><button class="btn" id="go" style="width:100%;margin-top:20px">Checkout</button>`
+  :`<p class="empty" style="padding:40px 0">Keranjangmu masih kosong.<br>Pilih dessert favoritmu dulu.</p><button class="btn" style="width:100%" onclick="$('#dCart').close();location.hash='menu'">Lihat menu</button>`)+`</div>`;
+  if(!d.open)d.showModal();
+}
+$('#dCart').onclick=e=>{
+  const q=e.target.closest('[data-q]'),del=e.target.closest('[data-del]');
+  if(q){const l=cart[+q.dataset.k];l.qty+=+q.dataset.q;if(l.qty<1)cart.splice(+q.dataset.k,1);save();upd();openCart()}
+  else if(del){cart.splice(+del.dataset.del,1);save();upd();openCart()}
+  else if(e.target.closest('#go')){$('#dCart').close();openOut()}
+};
+$('#cartBtn').onclick=openCart;
+
+/* checkout */
+function openOut(){
+  const d=$('#dOut'),s=sub();
+  d.innerHTML=`<div class="dh"><h3>Checkout</h3><button class="x" aria-label="Tutup">×</button></div><form class="db" id="fo">
+  <label class="f" for="nm">Nama penerima</label><input class="in" id="nm" required autocomplete="name" value="${user||''}">
+  <label class="f" for="ad">Alamat pengiriman</label><input class="in" id="ad" required autocomplete="street-address" placeholder="Jalan, nomor rumah, kota">
+  <label class="f" style="margin-bottom:0">Metode pembayaran</label>
+  <div class="opts" style="grid-template-columns:1fr;margin-top:8px">${['Transfer bank','E-wallet','Bayar di tempat (COD)'].map((m,k)=>`<label class="opt" style="position:relative"><input type="radio" name="pay" ${k?'':'checked'}>${m}</label>`).join('')}</div>
+  <b>Ringkasan pesanan</b>
+  <div class="tot" style="border:0;margin-top:6px">${cart.map(l=>`<div><span>${l.qty}× ${ITEMS.find(x=>x.id==l.id).n} (${l.size})</span><span>${fmt(price(l))}</span></div>`).join('')}<div><span>Delivery</span><span>${fmt(DELIV)}</span></div><div class="g"><span>Total</span><span>${fmt(s+DELIV)}</span></div></div>
+  <button class="btn" style="width:100%;margin-top:18px">Konfirmasi pesanan</button></form>`;
+  d.showModal();
+  $('#fo').onsubmit=e=>{e.preventDefault();cart=[];save();upd();
+    d.innerHTML=`<div class="dh"><h3>Pesanan diterima 🎉</h3><button class="x" aria-label="Tutup">×</button></div><div class="db"><p style="color:var(--mute)">Terima kasih! Dapur kami mulai menyiapkan dessert-mu.</p><ul class="track"><li>Pesanan dikonfirmasi</li><li class="o">Sedang dipanggang di dapur</li><li class="o">Kurir menuju alamatmu</li><li class="o">Sampai, selamat menikmati</li></ul><button class="btn" style="width:100%" onclick="$('#dOut').close()">Kembali ke menu</button></div>`}
+}
+
+/* masuk / daftar */
+function openAuth(mode='in'){
+  const d=$('#dAuth');
+  if(user&&!mode.startsWith('up')){d.innerHTML=`<div class="dh"><h3>Hi, Sweetie ♡</h3><button class="x" aria-label="Tutup">×</button></div><div class="db"><p style="margin-bottom:16px">${user}</p><button class="btn ghost" id="out" style="width:100%">Log out</button></div>`;d.showModal();
+    $('#out').onclick=()=>{user=null;try{localStorage.removeItem('crumella-user')}catch(e){}$('#authBtn').textContent='Masuk';d.close();toast('Kamu sudah keluar')};return}
+  const up=mode=='up';
+  d.innerHTML=`<div class="dh"><img src="img/logo-wine-word.png" alt="Crumella" style="height:42px;margin-right:auto"><button class="x" aria-label="Tutup">×</button></div><form class="db" id="fa">
+  <div class="tabs" role="tablist"><button type="button" role="tab" aria-selected="${!up}" data-m="in">Log In</button><button type="button" role="tab" aria-selected="${up}" data-m="up">Sign Up</button></div>
+  ${up?`<label class="f" for="un">Nama</label><input class="in" id="un" required autocomplete="name">`:''}
+  <label class="f" for="em">Email atau username</label><input class="in" id="em" required autocomplete="username">
+  <label class="f" for="pw">Password</label><input class="in" id="pw" type="password" required minlength="6" autocomplete="${up?'new':'current'}-password">
+  <button class="btn" style="width:100%;margin-top:20px">${up?'Daftar':'Log In'}</button>
+  <p style="text-align:center;color:var(--mute);margin-top:14px;font-size:14px">${up?'Sudah punya akun?':'Belum terdaftar?'} <a href="#" data-m="${up?'in':'up'}" style="color:#0b4de0">${up?'Log In':'Sign Up'}</a></p></form>`;
+  if(!d.open)d.showModal();
+  d.onclick=e=>{const m=e.target.closest('[data-m]');if(m){e.preventDefault();openAuth(m.dataset.m)}else if(e.target.closest('.x')||e.target===d)d.close()};
+  $('#fa').onsubmit=e=>{e.preventDefault();user=($('#un')?$('#un').value:$('#em').value).trim();try{localStorage.setItem('crumella-user',user)}catch(x){}
+    $('#authBtn').textContent=user.split(' ')[0];d.close();toast(up?'Akun dibuat. Diskon pesanan pertama aktif!':`Halo, ${user}!`)};
+}
+$('#authBtn').onclick=()=>openAuth('in');
+if(user)$('#authBtn').textContent=user.split(' ')[0];
+upd();renderMenu();
+</script>
+</body>
+</html>
