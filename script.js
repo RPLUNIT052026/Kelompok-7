@@ -38,18 +38,18 @@ const ITEMS = [
   {id:12,n:'Choco Cream Puff',c:'Pastry',p:22000,r:4.7,v:64,img:IMG.choux,d:'Kue sus isi krim vanila, dilapisi ganache cokelat yang mengilap.'},
   {id:13,n:'Macaron Garden',c:'Cookies',p:35000,r:4.9,v:58,img:IMG.mac,d:'Macaron warna-warni dengan isian krim, renyah di luar dan lembut di dalam.'},
   {id:14,n:'Dubay Chewy Cookie',c:'Cookies',p:23000,r:4.8,v:52,img:IMG.pist,d:'Kue cokelat berisi pistachio dan cokelat leleh, bertabur pistachio cincang.'},
-  {id:15,n:'Blueberry Pie Pocket',c:'Pastry',p:18000,r:4.8,v:61,img:'images/image-17.jpg',d:'Pie mungil berisi blueberry juicy dengan kulit pastry renyah dan taburan gula halus.'},
-  {id:16,n:'Choco Chip Cookies',c:'Cookies',p:16000,r:4.8,v:89,img:'images/image-18.jpg',d:'Cookies klasik dengan chocolate chips melimpah, renyah di pinggir dan chewy di tengah.'},
-  {id:17,n:'Blueberry Cheesecake',c:'Cheesecake',p:32000,r:4.9,v:126,img:'images/image-19.jpg',d:'Cheesecake creamy dengan topping blueberry segar dan saus beri yang glossy.'},
-  {id:18,n:'Chocolate Cheesecake',c:'Cheesecake',p:31000,r:4.8,v:93,img:'images/image-20.jpg',d:'Cheesecake lembut dengan saus cokelat pekat dan sentuhan mint.'},
-  {id:19,n:'Caramel Crunch Cheesecake',c:'Cheesecake',p:33000,r:4.9,v:101,img:'images/image-21.jpg',d:'Cheesecake klasik dengan saus karamel, whipped cream, dan remah crunchy.'},
-  {id:20,n:'Key Lime Cheesecake',c:'Cheesecake',p:30000,r:4.8,v:78,img:'images/image-22.jpg',d:'Cheesecake lime segar dengan krim lembut, zest lime, dan crumb buttery.'},
-  {id:21,n:'Lemon Mint Iced Tea',c:'Minuman',p:18000,r:4.8,v:73,img:'images/image-23.jpg',d:'Teh dingin lemon dengan mint segar, citrusy dan menyegarkan.'},
-  {id:22,n:'Oreo Cream Chocolate',c:'Minuman',p:25000,r:4.9,v:110,img:'images/image-24.jpg',d:'Minuman cokelat creamy dengan remahan Oreo, whipped cream, dan biskuit di atasnya.'},
-  {id:23,n:'Caramel Nut Latte',c:'Minuman',p:26000,r:4.8,v:84,img:'images/image-25.jpg',d:'Latte dengan foam lembut, karamel, dan taburan kacang renyah.'},
-  {id:24,n:'Pistachio Cream Shake',c:'Minuman',p:28000,r:4.9,v:97,img:'images/image-26.jpg',d:'Pistachio shake creamy dengan whipped cream dan pistachio cincang.'},
-  {id:25,n:'Cookie Cream Caramel Frappe',c:'Minuman',p:27000,r:4.9,v:96,img:'images/image-27.jpg',d:'Minuman kopi dingin dengan saus karamel, krim lembut, dan taburan remah biskuit. Manis, creamy, dan menyegarkan.'},
-  {id:26,n:'Caramel Affogato',c:'Minuman',p:29000,r:4.9,v:88,img:'images/image-28.jpg',d:'Perpaduan espresso dan es krim vanilla dengan swirl karamel yang lembut. Cocok untuk pencinta kopi dan dessert.'}
+  {id:15,n:'Blueberry Pie Pocket',c:'Pastry',p:18000,r:4.8,v:61,img:'images/image-17.png',d:'Pie mungil berisi blueberry juicy dengan kulit pastry renyah dan taburan gula halus.'},
+  {id:16,n:'Choco Chip Cookies',c:'Cookies',p:16000,r:4.8,v:89,img:'images/image-18.png',d:'Cookies klasik dengan chocolate chips melimpah, renyah di pinggir dan chewy di tengah.'},
+  {id:17,n:'Blueberry Cheesecake',c:'Cheesecake',p:32000,r:4.9,v:126,img:'images/image-19.png',d:'Cheesecake creamy dengan topping blueberry segar dan saus beri yang glossy.'},
+  {id:18,n:'Chocolate Cheesecake',c:'Cheesecake',p:31000,r:4.8,v:93,img:'images/image-20.png',d:'Cheesecake lembut dengan saus cokelat pekat dan sentuhan mint.'},
+  {id:19,n:'Caramel Crunch Cheesecake',c:'Cheesecake',p:33000,r:4.9,v:101,img:'images/image-21.png',d:'Cheesecake klasik dengan saus karamel, whipped cream, dan remah crunchy.'},
+  {id:20,n:'Key Lime Cheesecake',c:'Cheesecake',p:30000,r:4.8,v:78,img:'images/image-22.png',d:'Cheesecake lime segar dengan krim lembut, zest lime, dan crumb buttery.'},
+  {id:21,n:'Lemon Mint Iced Tea',c:'Minuman',p:18000,r:4.8,v:73,img:'images/image-23.png',d:'Teh dingin lemon dengan mint segar, citrusy dan menyegarkan.'},
+  {id:22,n:'Oreo Cream Chocolate',c:'Minuman',p:25000,r:4.9,v:110,img:'images/image-24.png',d:'Minuman cokelat creamy dengan remahan Oreo, whipped cream, dan biskuit di atasnya.'},
+  {id:23,n:'Caramel Nut Latte',c:'Minuman',p:26000,r:4.8,v:84,img:'images/image-25.png',d:'Latte dengan foam lembut, karamel, dan taburan kacang renyah.'},
+  {id:24,n:'Pistachio Cream Shake',c:'Minuman',p:28000,r:4.9,v:97,img:'images/image-26.png',d:'Pistachio shake creamy dengan whipped cream dan pistachio cincang.'},
+  {id:25,n:'Cookie Cream Caramel Frappe',c:'Minuman',p:27000,r:4.9,v:96,img:'images/image-27.png',d:'Minuman kopi dingin dengan saus karamel, krim lembut, dan taburan remah biskuit. Manis, creamy, dan menyegarkan.'},
+  {id:26,n:'Caramel Affogato',c:'Minuman',p:29000,r:4.9,v:88,img:'images/image-28.png',d:'Perpaduan espresso dan es krim vanilla dengan swirl karamel yang lembut. Cocok untuk pencinta kopi dan dessert.'}
 ];
 
 const CATS = ['Semua','Cake','Cheesecake','Pastry','Cookies','Minuman'];
