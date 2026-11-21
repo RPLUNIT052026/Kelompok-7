@@ -1,1 +1,24 @@
+name: Hapus Deployment Gagal
+on:
+  workflow_dispatch:
 
+permissions:
+  deployments: write
+
+jobs:
+  bersihkan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hapus semua deployment gagal
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --paginate "repos/${{ github.repository }}/deployments" --jq '.[].id' | while read id; do
+            STATUS=$(gh api "repos/${{ github.repository }}/deployments/$id/statuses" --jq '.[0].state')
+            echo "ID: $id | Status: $STATUS"
+            if [ "$STATUS" != "success" ]; then
+              echo "-> Menghapus ID: $id"
+              gh api -X POST "repos/${{ github.repository }}/deployments/$id/statuses" -f state=inactive --silent
+              gh api -X DELETE "repos/${{ github.repository }}/deployments/$id" --silent
+            fi
+          done
