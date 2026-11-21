@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumella – Sweet Moments, Better Days</title>
+<meta name="description" content="Crumella: kue, pastry, dan camilan manis yang dibuat segar setiap hari.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#top" aria-label="Crumella, ke beranda"><img data-img="word" alt="Crumella"></a>
+  <a class="l" href="#top">Beranda</a><a class="l" href="#menu">Menu</a><a class="l" href="#cara">Cara pesan</a><a class="l" href="#promo">Promo</a><a class="l" href="#tentang">Tentang</a><a class="l" href="#kontak">Kontak</a>
+  <button class="pill out" id="authBtn">Masuk</button>
+  <button class="pill solid" id="cartBtn" aria-label="Buka keranjang">Keranjang<span class="cnt" id="cnt">0</span></button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div class="hero-l">
+    <h1><img src="images/image-01.png" alt="Crumella"></h1>
+    <p class="tag">Sweet Moments, Better Days</p>
+    <p class="d">Kue, pastry, dan camilan manis yang dibuat segar setiap hari. Pilih, pesan, lalu pantau sampai ke depan pintumu.</p>
+    <div class="row"><a class="btn light" href="#menu">Lihat menu</a><button class="btn ghost" style="color:#f9e4cf;box-shadow:inset 0 0 0 2px #f1d6c1" data-auth="up">Daftar &amp; dapat diskon</button></div>
+  </div>
+  <div class="duo">
+    <img class="a" data-img="red" alt="Potongan red velvet dengan stroberi">
+    <img class="b" data-img="lava" alt="Chocolate lava cake dengan es krim">
+    <svg class="badge" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="ring" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="60" fill="#f5d5b8"/><g class="spin"><text font-size="11.5" fill="#5c161b" font-family="Jost,sans-serif" textLength="268" lengthAdjust="spacing"><textPath href="#ring">Dibuat segar setiap hari ✦ Crumella ✦ </textPath></text></g><text x="60" y="69" text-anchor="middle" font-size="24" fill="#5c161b">✦</text></svg>
+  </div>
+</div></div>
+<div class="belt" aria-hidden="true"><div></div></div>
+
+<section id="cara"><div class="wrap">
+  <h2>Cara pesan</h2>
+  <p class="lead">Dari memilih sampai menerima pesanan, semuanya cukup dengan beberapa ketukan.</p>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<section id="menu" style="padding-top:20px"><div class="wrap">
+  <h2>Pilih dessert & minuman favoritmu</h2>
+  <p class="lead">Dessert manis dan minuman segar siap menemani harimu.</p>
+  <div class="tools">
+    <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Cari dessert, pastry, atau minuman" aria-label="Cari menu"></label>
+    <div class="chips" id="chips" role="group" aria-label="Kategori"></div>
+  </div>
+  <div id="popWrap"><h3 class="sub">Menu populer</h3><div class="grid" id="pop"></div></div>
+  <h3 class="sub" id="allT">Semua menu</h3>
+  <div class="grid" id="all"></div>
+</div></section>
+
+<section id="promo" style="padding-top:0"><div class="wrap"><div class="promo">
+  <div><h2>Get a sweet offer!</h2><p>Daftar hari ini dan nikmati diskon spesial untuk pesanan dessert pertamamu.</p></div>
+  <button class="btn light" data-auth="up">Daftar sekarang</button>
+</div></div></section>
+<section id="tentang"><div class="wrap about">
+  <h2>Dibuat segar, setiap hari</h2>
+  <div><p>Crumella menyajikan kue, pastry, dan camilan manis dengan bahan pilihan. Semuanya disiapkan di dapur kami setiap hari, supaya rasanya tetap segar saat sampai di tanganmu.</p><p>Kami percaya satu hal sederhana: sepotong dessert yang tepat bisa membuat hari biasa terasa lebih baik.</p></div>
+</div></section>
+</main>
+
+<footer id="kontak"><div class="wrap"><a class="logo" href="#top" style="margin:0 auto 6px;width:fit-content"><img src="images/image-01.png" alt="Logo Crumella" style="height:96px;width:auto;max-width:min(280px,80vw);object-fit:contain"></a><p>Sweet Moments, Better Days</p><p>Pesan lewat website ini setiap hari · <a href="mailto:halo@crumella.id">halo@crumella.id</a> · Instagram @crumella.id</p><p>© 2026 Crumella</p></div></footer>
+
+<dialog id="dProd" aria-label="Detail dessert"></dialog>
+<dialog id="dCart" class="drawer" aria-label="Keranjang"></dialog>
+<dialog id="dOut" aria-label="Checkout"></dialog>
+<dialog id="dAuth" aria-label="Masuk atau daftar"></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
