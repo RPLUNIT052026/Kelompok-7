@@ -1,4 +1,4 @@
-const IMG={'cream': 'images/image-02.webp', 'word': 'images/image-03.webp', 'red': 'images/image-04.webp', 'lava': 'images/image-05.webp', 'roll': 'images/image-06.webp', 'crc': 'images/image-07.webp', 'matcha': 'images/image-08.webp', 'pist': 'images/image-09.webp', 'choux': 'images/image-10.webp', 'cheese': 'images/image-11.webp', 'lotus': 'images/image-12.webp', 'short': 'images/image-13.webp', 'cr1': 'images/image-14.webp', 'cr2': 'images/image-15.webp', 'mac': 'images/image-16.webp'};
+const IMG={'cream': 'images/image-02.PNG', 'word': 'images/image-03.png', 'red': 'images/image-04.png', 'lava': 'images/image-05.png', 'roll': 'images/image-06.png', 'crc': 'images/image-07.png', 'matcha': 'images/image-08.png', 'pist': 'images/image-09.png', 'choux': 'images/image-10.png', 'cheese': 'images/image-11.png', 'lotus': 'images/image-12.png', 'short': 'images/image-13.png', 'cr1': 'images/image-14.png', 'cr2': 'images/image-15.png', 'mac': 'images/image-16.png'};
 const $=s=>document.querySelector(s),fmt=n=>'Rp '+n.toLocaleString('id-ID'),DELIV=15000,LARGE=5000;
 /* ilustrasi dessert (SVG) */
 const vis=i=>`<img src="${i.img}" alt="${i.n}" loading="lazy">`;
