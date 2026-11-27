@@ -121,3 +121,66 @@ label.f{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
 .track li:not(:last-child):after{content:"";position:absolute;left:12px;top:28px;height:calc(100% - 6px);width:2px;background:var(--rose)}
 .track li.o:before{background:var(--cream);box-shadow:0 0 0 2px var(--rose) inset}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* ===== Animasi blink-blink kartu menu ===== */
+
+.card {
+  position: relative;
+}
+
+/* Bintang kerlap-kerlip di pojok kartu */
+.card::before,
+.card::after {
+  content: "✦";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  color: #f4a6b8;               /* ganti sesuai warna tema Crumella */
+  text-shadow: 0 0 8px currentColor;
+  animation: twinkle 1.8s ease-in-out infinite;
+}
+.card::before {
+  top: 10px;
+  right: 12px;
+  font-size: 18px;
+}
+.card::after {
+  top: 38px;
+  right: 30px;
+  font-size: 11px;
+  animation-delay: .9s;         /* selang-seling dengan bintang pertama */
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .1; transform: scale(.6) rotate(0deg); }
+  50%      { opacity: 1;  transform: scale(1.2) rotate(25deg); }
+}
+
+/* Biar tiap kartu berkedip di waktu berbeda, tidak serempak */
+.card:nth-child(2n)::before { animation-delay: .4s; }
+.card:nth-child(3n)::before { animation-delay: .8s; }
+.card:nth-child(2n)::after  { animation-delay: 1.3s; }
+.card:nth-child(3n)::after  { animation-delay: 1.6s; }
+
+/* Gambar kue berdenyut halus */
+.card .pic img {
+  animation: glow 2.6s ease-in-out infinite;
+}
+@keyframes glow {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.08) saturate(1.1); }
+}
+
+/* Saat di-hover, bintang jadi lebih cepat */
+.card:hover::before,
+.card:hover::after {
+  animation-duration: .8s;
+}
+
+/* Untuk pengguna yang mematikan animasi di perangkatnya */
+@media (prefers-reduced-motion: reduce) {
+  .card::before,
+  .card::after,
+  .card .pic img {
+    animation: none;
+  }
+}
