@@ -1,4 +1,3 @@
-
 const IMG = {
   cream: 'images/image-02.png',
   word: 'images/image-03.png',
@@ -117,12 +116,12 @@ function renderMenu() {
   ).join('');
 
   $('#popWrap').hidden = !!q || cat != 'Semua';
-  renderShowcase();
+  if (!$('#pop .s-stage')) renderShowcase();
   $('#allT').textContent = q || cat != 'Semua' ? `Hasil (${list.length})` : 'Semua menu';
   $('#all').innerHTML = list.length
-    animateCards();
     ? list.map(card).join('')
     : '<p class="empty">Belum ada dessert yang cocok. Coba kata kunci atau kategori lain.</p>';
+  animateCards();
 }
 
 $('#q').oninput = renderMenu;
@@ -407,12 +406,63 @@ function openAuth(mode='in') {
 $('#authBtn').onclick = () => openAuth('in');
 
 if (user) $('#authBtn').textContent = user.split(' ')[0];
+
+/* ===== Animasi kartu menu ===== */
+const cardIO = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    cardIO.unobserve(el);
+    el.style.opacity = '';
+    el.animate([
+      { opacity: 0, transform: 'translateY(50px) scale(.85) rotate(-3deg)' },
+      { opacity: 1, transform: 'translateY(-8px) scale(1.03) rotate(1deg)', offset: .65 },
+      { opacity: 1, transform: 'none' }
+    ], {
+      duration: 800,
+      delay: (+el.dataset.d || 0) * 110,
+      easing: 'cubic-bezier(.2,.7,.2,1)',
+      fill: 'backwards'
+    });
+  });
+}, { threshold: .12 });
+
+function animateCards() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('#all .card').forEach((el, k) => {
+    el.dataset.d = k % 4;
+    el.style.opacity = 0;
+    cardIO.observe(el);
+  });
+}
+
+/* Kartu miring mengikuti kursor + kilau */
+document.addEventListener('pointermove', e => {
+  if (e.pointerType != 'mouse') return;
+  const c = e.target.closest && e.target.closest('.card');
+  if (!c) return;
+  const r = c.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width;
+  const y = (e.clientY - r.top) / r.height;
+  c.style.setProperty('--ry', ((x - .5) * 14).toFixed(1) + 'deg');
+  c.style.setProperty('--rx', ((.5 - y) * 14).toFixed(1) + 'deg');
+  c.style.setProperty('--mx', (x * 100).toFixed(0) + '%');
+  c.style.setProperty('--my', (y * 100).toFixed(0) + '%');
+});
+document.addEventListener('pointerout', e => {
+  const c = e.target.closest && e.target.closest('.card');
+  if (c && !c.contains(e.relatedTarget)) {
+    c.style.removeProperty('--rx');
+    c.style.removeProperty('--ry');
+  }
+});
+
 /* ===== Showcase Menu Populer ===== */
 var showT, showI = 0;
 
 const io = new IntersectionObserver(es => {
   es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
   });
 }, { threshold: .15 });
 
@@ -428,7 +478,7 @@ function renderShowcase() {
   clearInterval(showT);
   showI = 0;
   box.classList.add('showcase');
-  box.classList.remove('in','hold');
+  box.classList.remove('show','hold');
 
   box.innerHTML = `
     <div class="s-stage">
@@ -477,7 +527,7 @@ function renderShowcase() {
     r.addEventListener('focus', () => { if (r.matches(':focus-visible')) set(k); });
     r.addEventListener('click', () => {
       if (r.classList.contains('on')) openProd(items[k].id);
-      else { set(k); clearInterval(showT); }   // layar sentuh: ketuk pertama pilih, kedua buka
+      else { set(k); clearInterval(showT); box.classList.add('hold'); }   // layar sentuh: ketuk pertama pilih, kedua buka
     });
   });
 
