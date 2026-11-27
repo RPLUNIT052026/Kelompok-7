@@ -98,7 +98,7 @@ $('#steps').innerHTML = [
 ].map((t,k) => `<div class="step"><b>${k+1}</b><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('');
 
 /* Menu */
-const card = i => `<button class="card" data-id="${i.id}">
+const card = i => `<button class="card" data-id="${i.id}" data-c="${i.c}">
   <div class="pic">${vis(i)}</div>
   <h3>${i.n}</h3>
   <span class="m">★ ${i.r} (${i.v} review) · ${i.c}</span>
