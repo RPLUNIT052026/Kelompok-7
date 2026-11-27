@@ -68,7 +68,8 @@ footer p a{color:#f9e4cf}
 .sub{font:700 18px var(--sans);margin:36px 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
 .card{text-align:left;background:#fffaf6;border:1px solid var(--line);border-radius:26px;padding:14px 14px 18px;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px}
-.card:hover{transform:translateY(-5px);box-shadow:0 18px 30px rgba(92,22,27,.14)}
+.card{position:relative;overflow:hidden;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.card:hover{box-shadow:0 18px 30px rgba(92,22,27,.14);transform:perspective(800px) translateY(-5px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
 .pic{aspect-ratio:1;border-radius:20px;background:radial-gradient(circle at 50% 40%,#fbe7d3,#efc7a6);display:grid;place-items:center;margin-bottom:8px}
 .pic svg{width:86%}.pic{overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .card h3{font:600 17px var(--sans)}
@@ -122,51 +123,11 @@ label.f{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
 .track li.o:before{background:var(--cream);box-shadow:0 0 0 2px var(--rose) inset}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 /* ===== Animasi kartu menu ===== */
-const cardIO = new IntersectionObserver(es => {
-  es.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target;
-    cardIO.unobserve(el);
-    el.style.opacity = '';
-    el.animate([
-      { opacity: 0, transform: 'translateY(50px) scale(.85) rotate(-3deg)' },
-      { opacity: 1, transform: 'translateY(-8px) scale(1.03) rotate(1deg)', offset: .65 },
-      { opacity: 1, transform: 'none' }
-    ], {
-      duration: 800,
-      delay: (+el.dataset.d || 0) * 110,
-      easing: 'cubic-bezier(.2,.7,.2,1)',
-      fill: 'backwards'
-    });
-  });
-}, { threshold: .12 });
-
-function animateCards() {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  document.querySelectorAll('#pop .card, #all .card').forEach((el, k) => {
-    el.dataset.d = k % 4;           // muncul bergantian per baris
-    el.style.opacity = 0;
-    cardIO.observe(el);
-  });
-}
-
-/* Kartu miring mengikuti kursor + kilau */
-document.addEventListener('pointermove', e => {
-  if (e.pointerType != 'mouse') return;
-  const c = e.target.closest && e.target.closest('.card');
-  if (!c) return;
-  const r = c.getBoundingClientRect();
-  const x = (e.clientX - r.left) / r.width;
-  const y = (e.clientY - r.top) / r.height;
-  c.style.setProperty('--ry', ((x - .5) * 14).toFixed(1) + 'deg');
-  c.style.setProperty('--rx', ((.5 - y) * 14).toFixed(1) + 'deg');
-  c.style.setProperty('--mx', (x * 100).toFixed(0) + '%');
-  c.style.setProperty('--my', (y * 100).toFixed(0) + '%');
-});
-document.addEventListener('pointerout', e => {
-  const c = e.target.closest && e.target.closest('.card');
-  if (c && !c.contains(e.relatedTarget)) {
-    c.style.removeProperty('--rx');
-    c.style.removeProperty('--ry');
-  }
-});
+.glare{position:absolute;inset:0;pointer-events:none;opacity:0;border-radius:inherit;transition:opacity .25s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55),transparent 55%);mix-blend-mode:soft-light;z-index:2}
+.card:hover .glare{opacity:1}
+.card:hover .pic img{transform:scale(1.08)}
+.pic img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.chip{transition:background .2s,color .2s,transform .2s}
+.chip:hover{transform:translateY(-2px)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.show{opacity:1;transform:none}
