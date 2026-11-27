@@ -116,8 +116,8 @@ function renderMenu() {
   ).join('');
 
   $('#popWrap').hidden = !!q || cat != 'Semua';
-  if (!$('#pop .s-stage')) renderShowcase();
   $('#allT').textContent = q || cat != 'Semua' ? `Hasil (${list.length})` : 'Semua menu';
+  $('#pop').innerHTML = POP.map(id => card(ITEMS.find(i => i.id == id))).join('');
   $('#all').innerHTML = list.length
     ? list.map(card).join('')
     : '<p class="empty">Belum ada dessert yang cocok. Coba kata kunci atau kategori lain.</p>';
@@ -406,7 +406,6 @@ function openAuth(mode='in') {
 $('#authBtn').onclick = () => openAuth('in');
 
 if (user) $('#authBtn').textContent = user.split(' ')[0];
-
 /* ===== Animasi kartu menu ===== */
 const cardIO = new IntersectionObserver(es => {
   es.forEach(e => {
@@ -418,18 +417,13 @@ const cardIO = new IntersectionObserver(es => {
       { opacity: 0, transform: 'translateY(50px) scale(.85) rotate(-3deg)' },
       { opacity: 1, transform: 'translateY(-8px) scale(1.03) rotate(1deg)', offset: .65 },
       { opacity: 1, transform: 'none' }
-    ], {
-      duration: 800,
-      delay: (+el.dataset.d || 0) * 110,
-      easing: 'cubic-bezier(.2,.7,.2,1)',
-      fill: 'backwards'
-    });
+    ], { duration: 800, delay: (+el.dataset.d || 0) * 110, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
   });
 }, { threshold: .12 });
 
 function animateCards() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  document.querySelectorAll('#all .card').forEach((el, k) => {
+  document.querySelectorAll('#pop .card, #all .card').forEach((el, k) => {
     el.dataset.d = k % 4;
     el.style.opacity = 0;
     cardIO.observe(el);
@@ -457,92 +451,11 @@ document.addEventListener('pointerout', e => {
   }
 });
 
-/* ===== Showcase Menu Populer ===== */
-var showT, showI = 0;
-
+/* Langkah cara pesan muncul saat di-scroll */
 const io = new IntersectionObserver(es => {
-  es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
-  });
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
 }, { threshold: .15 });
-
 document.querySelectorAll('.step').forEach(el => { el.classList.add('rv'); io.observe(el); });
 
-function renderShowcase() {
-  const box = $('#pop');
-  const items = POP.map(id => ITEMS.find(i => i.id == id));
-  const sparks = ['✦','♥','✧','★','✦','♡'].map((s,k) =>
-    `<span class="s-spark" style="left:${8 + k*16}%;animation-delay:${k*.8}s">${s}</span>`
-  ).join('');
-
-  clearInterval(showT);
-  showI = 0;
-  box.classList.add('showcase');
-  box.classList.remove('show','hold');
-
-  box.innerHTML = `
-    <div class="s-stage">
-      ${items.map((i,k) => `<img class="s-img${k ? '' : ' on'}" src="${i.img}" alt="${i.n}">`).join('')}
-      ${sparks}
-      <div class="s-cap">
-        <span class="s-no">01</span>
-        <div><small>Pilihan favorit</small><b>${items[0].n}</b></div>
-        <button class="s-open" type="button">Lihat detail</button>
-      </div>
-    </div>
-    <div class="s-list">
-      <p class="s-eyebrow">Best seller</p>
-      <h3 class="s-title">Dari oven ke hatimu</h3>
-      ${items.map((i,k) => `
-        <button class="srow${k ? '' : ' on'}" type="button" style="--k:${k}">
-          <img src="${i.img}" alt="">
-          <span class="sn"><b>${i.n}</b><small>${i.c} · ★ ${i.r} (${i.v})</small></span>
-          <span class="sp">${fmt(i.p)}</span>
-        </button>`).join('')}
-    </div>`;
-
-  const cap  = box.querySelector('.s-cap');
-  const imgs = box.querySelectorAll('.s-img');
-  const rows = box.querySelectorAll('.srow');
-
-  const set = k => {
-    showI = k;
-    imgs.forEach((el,n) => el.classList.toggle('on', n == k));
-    rows.forEach((el,n) => el.classList.toggle('on', n == k));
-    cap.querySelector('.s-no').textContent = String(k + 1).padStart(2,'0');
-    cap.querySelector('b').textContent = items[k].n;
-    cap.classList.remove('pulse');
-    void cap.offsetWidth;            // restart animasi keterangan
-    cap.classList.add('pulse');
-  };
-
-  const play = () => {
-    clearInterval(showT);
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    showT = setInterval(() => set((showI + 1) % items.length), 3500);
-  };
-
-  rows.forEach((r,k) => {
-    r.addEventListener('pointerenter', e => { if (e.pointerType == 'mouse') set(k); });
-    r.addEventListener('focus', () => { if (r.matches(':focus-visible')) set(k); });
-    r.addEventListener('click', () => {
-      if (r.classList.contains('on')) openProd(items[k].id);
-      else { set(k); clearInterval(showT); box.classList.add('hold'); }   // layar sentuh: ketuk pertama pilih, kedua buka
-    });
-  });
-
-  box.onpointerenter = e => {
-    if (e.pointerType == 'mouse') { box.classList.add('hold'); clearInterval(showT); }
-  };
-  box.onpointerleave = e => {
-    if (e.pointerType != 'mouse') return;
-    box.classList.remove('hold');
-    play();
-  };
-  box.querySelector('.s-open').onclick = () => openProd(items[showI].id);
-
-  play();
-  io.observe(box);
-}
 upd();
 renderMenu();
