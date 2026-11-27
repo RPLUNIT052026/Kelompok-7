@@ -121,66 +121,117 @@ label.f{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
 .track li:not(:last-child):after{content:"";position:absolute;left:12px;top:28px;height:calc(100% - 6px);width:2px;background:var(--rose)}
 .track li.o:before{background:var(--cream);box-shadow:0 0 0 2px var(--rose) inset}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-/* ===== Animasi blink-blink kartu menu ===== */
+/* ===== Animasi menu per kategori ===== */
 
-.card {
-  position: relative;
-}
+.card { position: relative; }
+.card .pic { position: relative; }
 
-/* Bintang kerlap-kerlip di pojok kartu */
-.card::before,
-.card::after {
-  content: "✦";
+/* Basis semua partikel (4 per kartu) */
+.card[data-c]::before,
+.card[data-c]::after,
+.card[data-c] .pic::before,
+.card[data-c] .pic::after {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
+  line-height: 1;
   pointer-events: none;
-  color: #f4a6b8;               /* ganti sesuai warna tema Crumella */
-  text-shadow: 0 0 8px currentColor;
-  animation: twinkle 1.8s ease-in-out infinite;
-}
-.card::before {
-  top: 10px;
-  right: 12px;
-  font-size: 18px;
-}
-.card::after {
-  top: 38px;
-  right: 30px;
-  font-size: 11px;
-  animation-delay: .9s;         /* selang-seling dengan bintang pertama */
+  color: var(--c);
+  text-shadow: 0 0 8px var(--c);
 }
 
+/* Cahaya berdenyut di sekeliling kartu */
+.card[data-c] { animation: aura 2.4s ease-in-out infinite; }
+.card[data-c]:nth-child(2n) { animation-delay: .6s; }
+.card[data-c]:nth-child(3n) { animation-delay: 1.2s; }
+@keyframes aura {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--g), 0); }
+  50%      { box-shadow: 0 0 18px 3px rgba(var(--g), .45); }
+}
+
+/* ---------- CAKE: hati berdetak + hati melayang ---------- */
+.card[data-c="Cake"] { --c: #ff5d8f; --g: 255,93,143; }
+.card[data-c="Cake"]::before { content: "♥"; top: 10px; right: 12px; font-size: 22px; animation: beat 1.4s infinite; }
+.card[data-c="Cake"]::after  { content: "♡"; top: 12px; left: 12px;  font-size: 16px; animation: beat 1.4s .5s infinite; }
+.card[data-c="Cake"] .pic::before { content: "♥"; left: 14%;  bottom: 8px; font-size: 14px; animation: floatUp 2.4s infinite; }
+.card[data-c="Cake"] .pic::after  { content: "✦"; right: 16%; bottom: 8px; font-size: 12px; animation: floatUp 2.4s 1.2s infinite; }
+
+/* ---------- CHEESECAKE: malam berbintang, bulan goyang, bintang jatuh ---------- */
+.card[data-c="Cheesecake"] { --c: #ffc83d; --g: 255,200,61; }
+.card[data-c="Cheesecake"]::before { content: "☾"; top: 8px; right: 12px; font-size: 26px; transform-origin: 50% 0; animation: sway 3s ease-in-out infinite; }
+.card[data-c="Cheesecake"]::after  { content: "✦"; top: 14px; left: 14px; font-size: 15px; animation: twinkle 1.6s infinite; }
+.card[data-c="Cheesecake"] .pic::before { content: "✧"; left: 12%; bottom: 14px; font-size: 14px; animation: twinkle 1.2s .4s infinite; }
+.card[data-c="Cheesecake"] .pic::after  { content: "★"; right: 8px; top: 6px; font-size: 13px; animation: shoot 2.6s infinite; }
+
+/* ---------- PASTRY: taburan gula halus berjatuhan ---------- */
+.card[data-c="Pastry"] { --c: #e8a13a; --g: 232,161,58; }
+.card[data-c="Pastry"]::before { content: "❄"; top: 6px; left: 16%; font-size: 14px; animation: fall 2.8s infinite; }
+.card[data-c="Pastry"]::after  { content: "✧"; top: 6px; left: 68%; font-size: 16px; animation: fall 3.2s .8s infinite; }
+.card[data-c="Pastry"] .pic::before { content: "∙"; top: 0; left: 40%; font-size: 26px; animation: fall 2.4s .3s infinite; }
+.card[data-c="Pastry"] .pic::after  { content: "❅"; top: 0; left: 84%; font-size: 13px; animation: fall 3s 1.4s infinite; }
+
+/* ---------- COOKIES: choco chip memantul ---------- */
+.card[data-c="Cookies"] { --c: #7a4a2b; --g: 122,74,43; }
+.card[data-c="Cookies"]::before { content: "●"; top: 14px; right: 16px; font-size: 16px; animation: bounce 1.2s infinite; }
+.card[data-c="Cookies"]::after  { content: "●"; top: 18px; left: 14px;  font-size: 11px; animation: bounce 1.2s .3s infinite; }
+.card[data-c="Cookies"] .pic::before { content: "◉"; left: 10%;  bottom: 10px; font-size: 14px; animation: bounce 1.2s .6s infinite; }
+.card[data-c="Cookies"] .pic::after  { content: "✺"; right: 10%; bottom: 10px; font-size: 15px; animation: spin 3s linear infinite; }
+
+/* ---------- MINUMAN: gelembung naik + es berputar ---------- */
+.card[data-c="Minuman"] { --c: #2fb8e6; --g: 47,184,230; }
+.card[data-c="Minuman"]::before { content: "◯"; top: 40px; right: 14px; font-size: 14px; animation: bubble 2.6s infinite; }
+.card[data-c="Minuman"]::after  { content: "○"; top: 50px; left: 14px;  font-size: 10px; animation: bubble 2.2s .7s infinite; }
+.card[data-c="Minuman"] .pic::before { content: "∘"; left: 30%; bottom: 6px; font-size: 22px; animation: bubble 2s .3s infinite; }
+.card[data-c="Minuman"] .pic::after  { content: "❄"; right: 12%; top: 8px;   font-size: 14px; animation: spin 4s linear infinite; }
+
+/* ---------- Keyframes ---------- */
 @keyframes twinkle {
-  0%, 100% { opacity: .1; transform: scale(.6) rotate(0deg); }
-  50%      { opacity: 1;  transform: scale(1.2) rotate(25deg); }
+  0%, 100% { opacity: .1; transform: scale(.5) rotate(0); }
+  50%      { opacity: 1;  transform: scale(1.25) rotate(25deg); }
 }
-
-/* Biar tiap kartu berkedip di waktu berbeda, tidak serempak */
-.card:nth-child(2n)::before { animation-delay: .4s; }
-.card:nth-child(3n)::before { animation-delay: .8s; }
-.card:nth-child(2n)::after  { animation-delay: 1.3s; }
-.card:nth-child(3n)::after  { animation-delay: 1.6s; }
-
-/* Gambar kue berdenyut halus */
-.card .pic img {
-  animation: glow 2.6s ease-in-out infinite;
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  15%      { transform: scale(1.4); }
+  30%      { transform: scale(1); }
+  45%      { transform: scale(1.3); }
 }
-@keyframes glow {
-  0%, 100% { filter: brightness(1); }
-  50%      { filter: brightness(1.08) saturate(1.1); }
+@keyframes floatUp {
+  0%   { opacity: 0; transform: translateY(0) scale(.6); }
+  20%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-70px) translateX(12px) scale(1.2) rotate(20deg); }
 }
-
-/* Saat di-hover, bintang jadi lebih cepat */
-.card:hover::before,
-.card:hover::after {
-  animation-duration: .8s;
+@keyframes sway {
+  0%, 100% { transform: rotate(-18deg); }
+  50%      { transform: rotate(18deg); }
 }
+@keyframes shoot {
+  0%   { opacity: 0; transform: translate(0,0) scale(.6); }
+  15%  { opacity: 1; }
+  60%, 100% { opacity: 0; transform: translate(-70px,70px) scale(1); }
+}
+@keyframes fall {
+  0%   { opacity: 0; transform: translateY(-14px) rotate(0); }
+  15%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(95px) rotate(200deg); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) scale(1,1); }
+  40%      { transform: translateY(-22px) scale(.95,1.1); }
+  60%      { transform: translateY(-22px); }
+  80%      { transform: translateY(0) scale(1.15,.85); }
+}
+@keyframes bubble {
+  0%   { opacity: 0; transform: translate(0,0) scale(.4); }
+  20%  { opacity: .9; }
+  50%  { transform: translate(8px,-35px) scale(1); }
+  100% { opacity: 0; transform: translate(-6px,-75px) scale(1.2); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* Untuk pengguna yang mematikan animasi di perangkatnya */
+/* Matikan animasi kalau perangkat pengguna memintanya */
 @media (prefers-reduced-motion: reduce) {
-  .card::before,
-  .card::after,
-  .card .pic img {
+  .card[data-c],
+  .card[data-c]::before, .card[data-c]::after,
+  .card[data-c] .pic::before, .card[data-c] .pic::after {
     animation: none;
   }
 }
