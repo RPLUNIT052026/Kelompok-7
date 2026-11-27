@@ -116,7 +116,7 @@ function renderMenu() {
   ).join('');
 
   $('#popWrap').hidden = !!q || cat != 'Semua';
-  $('#pop').innerHTML = POP.map(id => card(ITEMS.find(i => i.id == id))).join('');
+  renderShowcase();
   $('#allT').textContent = q || cat != 'Semua' ? `Hasil (${list.length})` : 'Semua menu';
   $('#all').innerHTML = list.length
     ? list.map(card).join('')
