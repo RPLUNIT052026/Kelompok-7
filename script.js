@@ -494,5 +494,3 @@ function renderShowcase() {
   play();
   io.observe(box);
 }
-upd();
-renderMenu();
