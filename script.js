@@ -99,6 +99,7 @@ $('#steps').innerHTML = [
 
 /* Menu */
 const card = i => `<button class="card" data-id="${i.id}" data-c="${i.c}">
+  <i class="glare"></i>
   <div class="pic">${vis(i)}</div>
   <h3>${i.n}</h3>
   <span class="m">★ ${i.r} (${i.v} review) · ${i.c}</span>
@@ -119,6 +120,7 @@ function renderMenu() {
   renderShowcase();
   $('#allT').textContent = q || cat != 'Semua' ? `Hasil (${list.length})` : 'Semua menu';
   $('#all').innerHTML = list.length
+    animateCards();
     ? list.map(card).join('')
     : '<p class="empty">Belum ada dessert yang cocok. Coba kata kunci atau kategori lain.</p>';
 }
